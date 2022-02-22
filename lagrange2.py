@@ -7,7 +7,7 @@ G = 6.67408e-11
 m1 = 1.9885e30 # kg
 m2 = 5.972e24 # kg
 R = 1.49598e8 # km
-w = 1.992e-7
+w = 1.992e-7 # radial velocity
 
 def LN(r):
     f1 = -G*m1/((r)*abs(r))

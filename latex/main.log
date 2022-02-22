@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.15)  15 FEB 2022 09:44
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.15)  14 FEB 2022 23:27
->>>>>>> 72b84439fb19b5bbc00aae07b2d9899d07b364c3
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2022.1.15)  20 FEB 2022 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -977,193 +973,12 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (/usr/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-(/usr/share/texmf-dist/tex/latex/newtx/newtxtext.sty
-Package: newtxtext 2021/12/26 v1.701(Michael Sharpe) latex and unicode latex su
-pport for TeXGyreTermesX
-
-`newtxtext' v1.701, 2021/12/26 Text macros taking advantage of TeXGyre Termes a
-nd its extensions (msharpe) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-)
-(/usr/share/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(/usr/share/texmf-dist/tex/generic/iftex/ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-)
-(/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
-
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
-(/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks40
-\XKV@tempa@toks=\toks41
-)
-\XKV@depth=\count464
-File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-)
-(/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
-LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 27.
-LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 27.
-LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 27.
-LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 27.
-
-(/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex)
-\ntx@tmpcnta=\count465
-\ntx@cnt=\count466
-
-ntxotffalse
-
-(/usr/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
-Package: fontaxes 2020/07/21 v1.0e Font selection axes
-LaTeX Info: Redefining \upshape on input line 29.
-LaTeX Info: Redefining \itshape on input line 31.
-LaTeX Info: Redefining \slshape on input line 33.
-LaTeX Info: Redefining \swshape on input line 35.
-LaTeX Info: Redefining \scshape on input line 37.
-LaTeX Info: Redefining \sscshape on input line 39.
-LaTeX Info: Redefining \ulcshape on input line 41.
-LaTeX Info: Redefining \textsw on input line 47.
-LaTeX Info: Redefining \textssc on input line 48.
-LaTeX Info: Redefining \textulc on input line 49.
-)
-LaTeX Info: Redefining \textsu on input line 543.
-LaTeX Info: Redefining \oldstylenums on input line 630.
-)
-(/usr/share/texmf-dist/tex/latex/newtx/newtxmath.sty
-Package: newtxmath 2021/12/18 v1.7
-
-`newtxmath' v1.7, 2021/12/18 Math macros based originally on txfonts (msharpe)
-(/usr/share/texmf-dist/tex/latex/oberdiek/centernot.sty
-Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
-)
-\tx@cntz=\count467
-
-(/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex)
-\tx@Isdigit=\count468
-\tx@IsAlNum=\count469
-\tx@tA=\toks42
-\tx@tB=\toks43
-\tx@su=\read5
-
-amsthm NOT loaded
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 373.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/ntxtlf/m/n on input line 373.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/ntxtlf/m/n on input line 373.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/ntxtlf/m/n --> OT1/ntxtlf/b/n on input line 374.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 380.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/qhv/m/n on input line 380.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/qhv/m/n on input line 380.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 381.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/ntxtlf/m/it on input line 381.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/ntxtlf/m/it on input line 381.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 382.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 382.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/ntxtt/m/n on input line 382.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 384.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/ntxtlf/m/it --> OT1/ntxtlf/b/it on input line 385.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/qhv/m/n --> T1/qhv/b/n on input line 386.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/ntxtt/m/n --> T1/ntxtt/b/n on input line 387.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 488.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ntxmi/m/it on input line 488.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ntxmi/m/it on input line 488.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/ntxmi/m/it --> OML/ntxmi/b/it on input line 489.
-\symlettersA=\mathgroup9
-LaTeX Font Info:    Overwriting symbol font `lettersA' in version `bold'
-(Font)                  U/ntxmia/m/it --> U/ntxmia/b/it on input line 544.
-LaTeX Font Info:    Redeclaring math alphabet \mathfrak on input line 546.
-Now handling font encoding LMS ...
-... no UTF-8 mapping file for font encoding LMS
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 565.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 565.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> LMS/ntxsy/m/n on input line 565.
-LaTeX Font Info:    Encoding `OMS' has changed to `LMS' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 565.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> LMS/ntxsy/m/n on input line 565.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  LMS/ntxsy/m/n --> LMS/ntxsy/b/n on input line 566.
-\symAMSm=\mathgroup10
-LaTeX Font Info:    Overwriting symbol font `AMSm' in version `bold'
-(Font)                  U/ntxsym/m/n --> U/ntxsym/b/n on input line 591.
-\symsymbolsC=\mathgroup11
-LaTeX Font Info:    Overwriting symbol font `symbolsC' in version `bold'
-(Font)                  U/ntxsyc/m/n --> U/ntxsyc/b/n on input line 612.
-Now handling font encoding LMX ...
-... no UTF-8 mapping file for font encoding LMX
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 625.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 6
-25.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 625.
-LaTeX Font Info:    Encoding `OMX' has changed to `LMX' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 625
-.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> LMX/ntxexx/m/n on input line 625.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  LMX/ntxexx/m/n --> LMX/ntxexx/b/n on input line 626.
-\symlargesymbolsTXA=\mathgroup12
-LaTeX Font Info:    Overwriting symbol font `largesymbolsTXA' in version `bold'
-
-(Font)                  U/ntxexa/m/n --> U/ntxexa/b/n on input line 640.
-\tx@sbptoks=\toks44
-LaTeX Font Info:    Redeclaring math delimiter \lfloor on input line 863.
-LaTeX Font Info:    Redeclaring math delimiter \rfloor on input line 864.
-LaTeX Font Info:    Redeclaring math delimiter \lceil on input line 865.
-LaTeX Font Info:    Redeclaring math delimiter \rceil on input line 866.
-LaTeX Font Info:    Redeclaring math delimiter \lbrace on input line 867.
-LaTeX Font Info:    Redeclaring math delimiter \rbrace on input line 868.
-LaTeX Font Info:    Redeclaring math delimiter \langle on input line 869.
-LaTeX Font Info:    Redeclaring math delimiter \rangle on input line 871.
-LaTeX Font Info:    Redeclaring math delimiter \arrowvert on input line 875.
-LaTeX Font Info:    Redeclaring math delimiter \vert on input line 876.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 947.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 948.
-LaTeX Font Info:    Redeclaring math accent \vec on input line 2017.
-LaTeX Info: Redefining \Bbbk on input line 2807.
-LaTeX Info: Redefining \not on input line 2956.
-)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line
- 73.
- (/usr/share/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
-File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 73.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 73.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
- 73.
-
-(/usr/share/texmf-dist/tex/latex/newtx/omlntxmi.fd
-File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
-)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
@@ -1175,33 +990,11 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 
-73.
-
-(/usr/share/texmf-dist/tex/latex/newtx/untxexa.fd
-File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
-)
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line
- 73.
-
-(/usr/share/texmf-dist/tex/latex/newtx/lmsntxsy.fd
-File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
-)
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 73.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input lin
-e 73.
-
-(/usr/share/texmf-dist/tex/latex/newtx/lmxntxexx.fd
-File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
-)
 LaTeX Font Info:    ... okay on input line 73.
 
 
@@ -1226,17 +1019,17 @@ Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count470
+\scratchcounter=\count464
 \scratchdimen=\dimen302
 \scratchbox=\box76
-\nofMPsegments=\count471
-\nofMParguments=\count472
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count473
+\nofMPsegments=\count465
+\nofMParguments=\count466
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count467
 \MPscratchDim=\dimen303
-\MPnumerator=\count474
-\makeMPintoPDFobject=\count475
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count468
+\makeMPintoPDFobject=\count469
+\everyMPtoPDFconversion=\toks41
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1332,30 +1125,9 @@ LaTeX Info: Redefining \nameref on input line 73.
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
-\c@mv@tabular=\count476
-\c@mv@boldtabular=\count477
  (./titlepage.tex [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 76.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 76.
- (./main.toc
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 4.
-LaTeX Font Info:    Trying to load font information for OT1+ntxtlf on input lin
-e 10.
-
-(/usr/share/texmf-dist/tex/latex/newtx/ot1ntxtlf.fd
-File: ot1ntxtlf.fd 2021/05/24 v1.0 font definition file for OT1/ntx/tlf
-)
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 10.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 10.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 10.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./main.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 10.
 
 
@@ -1367,24 +1139,6 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-10.
-
-(/usr/share/texmf-dist/tex/latex/newtx/untxmia.fd
-File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-10.
-
-(/usr/share/texmf-dist/tex/latex/newtx/untxsym.fd
-File: untxsym.fd 2015/03/20 Fontinst v1.933 font definitions for U/ntxsym.
-)
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-10.
-
-(/usr/share/texmf-dist/tex/latex/newtx/untxsyc.fd
-File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 ))
 \tf@toc=\write6
 \openout6 = `main.toc'.
@@ -1394,78 +1148,38 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.78 	\newpage
-               [1]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 110.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 114.
- [2]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 144.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 144.
- [3]
-<r-accel-figure-1.png, id=83, 310.0383pt x 289.08pt>
+               [1] [2] [3]
+<r-accel-figure-1.png, id=80, 310.0383pt x 289.08pt>
 File: r-accel-figure-1.png Graphic file (type png)
 <use r-accel-figure-1.png>
 Package pdftex.def Info: r-accel-figure-1.png  used on input line 170.
 (pdftex.def)             Requested size: 186.02441pt x 173.44933pt.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 171.
-<r-accel-figure-2.png, id=85, 299.9205pt x 289.08pt>
+<r-accel-figure-2.png, id=82, 299.9205pt x 289.08pt>
 File: r-accel-figure-2.png Graphic file (type png)
 <use r-accel-figure-2.png>
 Package pdftex.def Info: r-accel-figure-2.png  used on input line 177.
 (pdftex.def)             Requested size: 179.95367pt x 173.44933pt.
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-182.
- (/usr/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+82.
+ (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 182.
 
-[4 <./r-accel-figure-1.png> <./r-accel-figure-2.png>]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 213.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 213.
- [5] [6] [7]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 305.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 305.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 305.
- [8] [9]
-<<<<<<< HEAD
-[10] [11] [12]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 448.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.8pt on input line 448.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.6pt on input line 448.
- [13] [14] [15]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Warning: Empty bibliography on input line 513.
-=======
-[10]
-Underfull \hbox (badness 10000) detected at line 414
- []$[]  \OT1/ntxtlf/m/n/12 1  $ 
+[4] [5 <./r-accel-figure-1.png> <./r-accel-figure-2.png>] [6] [7]
+Overfull \hbox (2.90918pt too wide) in paragraph at lines 304--305
+ [][] 
  []
 
-[11]
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 447.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.8pt on input line 447.
-LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 6.6pt on input line 447.
- [12] [13] [14]
 
-LaTeX Warning: Empty bibliography on input line 512.
->>>>>>> 72b84439fb19b5bbc00aae07b2d9899d07b364c3
+Overfull \hbox (2.90918pt too wide) in paragraph at lines 320--321
+ [][] 
+ []
+
+[8] [9] [10] [11] [12] [13] [14] [15]
+
+LaTeX Warning: Empty bibliography on input line 508.
 
 (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1475,39 +1189,34 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 40710 strings out of 478353
- 802716 string characters out of 5854635
-=======
- 40709 strings out of 478353
- 802709 string characters out of 5854635
->>>>>>> 72b84439fb19b5bbc00aae07b2d9899d07b364c3
- 1746423 words of memory out of 5000000
- 58144 multiletter control sequences out of 15000+600000
- 494665 words of font info for 168 fonts, out of 8000000 for 9000
+ 37849 strings out of 478353
+ 764607 string characters out of 5854635
+ 1731032 words of memory out of 5000000
+ 55414 multiletter control sequences out of 15000+600000
+ 423558 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,90p,737b,3908s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/usr/share/texm
-f-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texmf-dist/fonts/type1/
-public/newtx/NewTXMI.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texmf-dist/fonts/
-type1/public/newtx/txmiaX.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/t
-xsys.pfb></usr/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/t
-exmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texmf-dist/fonts/type1/
-public/newtx/ztmri.pfb>
-<<<<<<< HEAD
-Output written on main.pdf (16 pages, 212397 bytes).
+ 84i,15n,90p,737b,3824s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf
+-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-su
+per/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pf
+b></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts
+/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/c
+m-super/sftt1095.pfb>
+Output written on main.pdf (16 pages, 306720 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
-=======
-Output written on main.pdf (15 pages, 211670 bytes).
-PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 500000)
->>>>>>> 72b84439fb19b5bbc00aae07b2d9899d07b364c3
+ 275 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
  95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

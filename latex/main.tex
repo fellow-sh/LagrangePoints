@@ -23,7 +23,7 @@
 \usepackage{hyperref}					% hypertext support
 
 \usepackage{setspace}					% easy text spacing
-\usepackage{newtxtext,newtxmath} 		% times new roman, more up to date
+%\usepackage{newtxtext,newtxmath} 		% times new roman, more up to date
 
 % Standard ihat and jhat are not implemented by default.
 % This provides the ihat and jhat without the dot at the top.
@@ -128,35 +128,35 @@
 	We must also consider the centrifugal and Coriolis forces acted on the object at the Lagrange point.
 	We can rule out the Coriolis force, since the collinear Lagrange points will not be moving in our rotating frame of reference.
 	As for centrifugal force, it will be proportional to the centripetal force,
-	\begin{equation}
+	\begin{equation*}
 		F = m\omega^2r
-	\end{equation}
+	\end{equation*}
 	where $\omega$ is the angular velocity of the object. Understanding that angular velocity can be defined as
-	\begin{equation}
+	\begin{equation*}
 		\omega = \frac{2\pi}{T}
-	\end{equation}
+	\end{equation*}
 	and the period of a circular orbit, from Kepler's third law, as
-	\begin{equation}
+	\begin{equation*}
 		T = 2\pi\sqrt{\frac{R^3}{G(m_1+m_2)}} % NOTE: this may require citation.
-	\end{equation}
+	\end{equation*}
  	the equation for angular velocity simplifies to
- 	\begin{equation}
+ 	\begin{equation*}
  		\omega^2 = \frac{G(m_1+m_2)}{R^3} \text{.} % NOTE: Gravitational Parameter is the sum of the two major masses. Citation^^?
- 	\end{equation} % You should add details as to why we are evaluating the radial acceleration. THERE IS A DISCEPENCY IN THE ALGREBRA!
+ 	\end{equation*} % You should add details as to why we are evaluating the radial acceleration. THERE IS A DISCEPENCY IN THE ALGREBRA!
 	Therefore, the sum of forces acting on an object at a Lagrange point is
-	\begin{equation}
+	\begin{equation*}
 		F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3 \text{.}
-	\end{equation}
+	\end{equation*}
 	Solving for a radial acceleration of 0, we get the formula
-	\begin{equation}
+	\begin{equation*}
 		0 = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r \text{.}
-	\end{equation}
+	\end{equation*}
 	Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$.
 	It is worth noting that, with respect to direction, $r^2$ and $(r-R)^2$ will only reflect acceleration in the negative direction and will not be sufficient to tell us where L1 and L3 are.
 	To remedy this, the formula is rewritten as such to preserve the sign of $r$:
-	\begin{equation}
+	\begin{equation*}
 		0 = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r \text{.}
-	\end{equation}
+	\end{equation*}
 	%The sign of each term in the equation is important to represent which direction acceleration is being applied.
 	%If $m_3$ were positioned between $m_1$ and $m_2$, for example, than the term $-\frac{Gm_2}{(r-R^2)}$ should be positive to show that the acceleration caused by the gravity of $m_2$ is in the outward direction.
 	%However, for each of the gravity terms in our equation, $r^2$ and $(r-R)^2$ will always be positive regardless ...
@@ -240,10 +240,10 @@
 	
 	The second scenario builds off the first, and involves equations that are defined by each other.
 	Consider the following system of equations with functions $x$ and $y$ in terms of $t$:
-	\begin{align}
+	\begin{align*}
 		\frac{dx}{dt} &= 4x - 2y \quad &x(0) = 4 \\
 		\frac{dy}{dt} &= 3x - y \quad &y(0) = 2
-	\end{align}
+	\end{align*}
 	Here, the rate of change of $x$ is defined in terms of both $x$ and $y$, and same goes for the rate of change of $y$.
 	Because these two equations are intertwined, initially it seems impossible to define both $x$ and $y$ as separate from each other.
 	However, remembering our previous theorem, Equation \eqref{eqn:theory1}, we can predict that both functions will look something like this:
@@ -264,26 +264,26 @@
 		3x - y &=ky \nonumber \\
 		3x &= (k + 1)y \nonumber \\
 		3x &= (k + 1)\frac{(4 - k)x}{2} \nonumber \\
-		3\times2 &= (k + 1)(4 - k) \nonumber \\
-		0 &= (1 + k)(4 - k) - 3\times2 \label{eqn:chr-polynomial-ex}
+		3\cdot2 &= (k + 1)(4 - k) \nonumber \\
+		0 &= (1 + k)(4 - k) - 3\cdot2 \label{eqn:chr-polynomial-ex}
 	\end{align}
 	By now, we can deduce that there will be two possible values for $k$.
 	Continuing the solution,
-	\begin{align}
-		0 &= -k^2 - 3k + 2 \nonumber \\
+	\begin{align*}
+		0 &= -k^2 - 3k + 2 \\
 		0 &= (k - 1)(k - 2)
-	\end{align}
+	\end{align*}
 	Here, the solutions are $k_1 = 1$ and $k_2 = 2$.
 	We don't know exactly what these values \textit{mean}, other than they correspond to $x$ and $y$, respectively.
 	Let us see what happens when we plug them into our linear system.
 	For $k_1$:
-	\begin{equation}
+	\begin{equation*}
 		\left. \begin{array}{l}
 			(1)x = 4x - 2y \\
 			(1)y = 3x - y
 		\end{array} \right \}
 		\implies 0 = 3x - 2y \implies 2y = 3x
-	\end{equation}
+	\end{equation*}
 	This gives us a relationship of $x$ and $y$ where, when $k = 1$, there is a 
 	$2 : 3$ ratio between $x$ and $y$.
 	This is significant because, for some specific values of $x$, $y$, and $k$, our system of linear equations \textit{converge} in a manner that essentially defines them as the same equation.
@@ -333,40 +333,41 @@
 		y(t) = (3)c_1e^{r_1t} + n_4c_2e^{r_2t} \label{eqn:y-t-partial}
 	\end{align}
 	where $n$ expresses the necessary coefficients for each ratio. What role does $k$ play in the solution? To figure out, first we will find the ratio for when $k = 2$.
-	\begin{equation}
+	\begin{equation*}
 		\left. \begin{array}{l}
 			(2)x = 4x - 2y \\
 			(2)y = 3x - y
 		\end{array} \right \}
 		\implies 0 = x - y \implies y = x
-	\end{equation}
+	\end{equation*}
 	Here, there is a $1 : 1$ ratio between $x$ and $y$. What happens when we enter initial values for $x$ and $y$ that adhere to this ratio? For example, when $x = 2$ and $y = 2$:
 	\begin{gather*}
 		4(2) - 2(2) = 8 - 4 = 4 \\
 		3(2) - (2) = 6 - 2 = 4 
 	\end{gather*} % Do we need to set the equations equal to x and y?
 	It is as if the initial values were multiplied by the $k$ value!
+	This is actually expected, given how we laid out Equations \eqref{eqn:kx-sys} and \eqref{eqn:ky-sys}.
 	In this case, $k$ is the common coefficient between both $x$ and $y$ for the derivative of the function $y$.
-	\begin{equation}
-		\frac{dy}{dt} = 2(3x - y)
-	\end{equation}
+	\begin{equation*}
+		\frac{dy}{dt} = 2y % THIS NEEDS TO BE CORRECTED!!!!
+	\end{equation*}
 	This essentially means $k$ can be used as the $r$ values from Equations \eqref{eqn:x-t-general} and \eqref{eqn:y-t-general}.
 	Finding the functions $x$ and $y$ is almost complete:
-	\begin{align}
+	\begin{align*}
 		x(t) = (2)c_1e^{(1)t} + (1)c_2e^{(2)t} \\
 		y(t) = (3)c_1e^{(1)t} + (1)c_2e^{(2)t}
-	\end{align}
+	\end{align*}
 	All that is left is to find the initial constants for each equation given the initial values at the beginning of this scenario.
-	\begin{align}
+	\begin{align*}
 		\left. \begin{array}{l}
 			x(0) = 4 = 2c_1 + c_2 \\
 			y(0) = 2 = 3c_1 + c_2
 		\end{array} \right\}
-		&\implies 2 = -c_1 \implies -2 = c_1 \nonumber \\
-		2 = 3(-2) + c_2 &\implies 8 = c_2 \nonumber \\
+		&\implies 2 = -c_1 \implies -2 = c_1 \\
+		2 = 3(-2) + c_2 &\implies 8 = c_2 \\
 		x(t) =& -4e^t + 8e^{2t} \\
 		y(t) =& -6e^t + 8e^{2t} 
-	\end{align}
+	\end{align*}
 	And that is the solution!
 	The reason why we want to understand how to solve this system is because we will encounter a similar system when deriving the equations of motion.
 	For that reason, we will also need a general method to solving these systems.
@@ -403,10 +404,10 @@
 		\lambda x_3 &= gx_1 + hx_2 + ix_3
 	\end{align*}
 	The eigenvalues are calculated as:
-	\begin{align}
+	\begin{align*}
 		0 &= (a - \lambda)[(e - \lambda)(i - \lambda) - fh] + b[d(i - \lambda) - fg] - c[dh - (e - \lambda)g] \\
 		&= (a - \lambda)(e - \lambda)(i - \lambda) + bfg + cdh - cg(e - \lambda) - bd(i - \lambda) - fh(a - \lambda)
-	\end{align}
+	\end{align*}
 	Notice how the calculation is, in essence, the calculation for the eigenvalues of three two-equation systems multiplied by the coefficients of the first top-most equation, $a, b, \text{and}\, c$.
 	This behaviour can be extrapolated onto the solution for a system of four variables and four differential equations with coefficients $(a_1, a_2, \dots, a_n)$,
 	%The key concepts explored through these scenarios are the solutions to systems of linear differential equations, and eigenvalues and eigenvectors.
@@ -469,15 +470,15 @@
 	As shown in Figure \ref{fig:3d-coords}, we will have unit vectors $\uvec{x}$, $\uvec{y}$, and $\uvec{z}$ drawn relative to the orbit of the Earth.
 	The satellite around L2, $m_3$, will have the coordinates $(x_3,y_3,z_3)$ represented by the vector $\bvec{r}$.
 	Taking from my understanding of vectors, the position of a satellite can be expressed as:
-	\begin{equation}
+	\begin{equation*}
 		\bvec{r} = x_3\uvec{x} + y_3\uvec{y} + z_3\uvec{z}
-	\end{equation}
+	\end{equation*}
 	Because the unit vectors are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account.
-	\begin{gather}
+	\begin{gather*}
 		\uvec{x} = (\cos\theta)\uvec{x}_0 + (\sin\theta)\uvec{y}_0 \\
 		\uvec{y} = -(\sin\theta)\uvec{x}_0 + (\cos\theta)\uvec{y}_0 \\
 		\uvec{z} = \uvec{z}_0
-	\end{gather}
+	\end{gather*}
 	At this point, it is crucial to notice that these equations are not yet useful to us to describe movement.
 	In order to describe motion, we need to be able to define the velocity and acceleration of the satellite in three-dimensional space.
 	This means being able to take the derivative of a vector.
@@ -490,13 +491,13 @@
 	So instead, from here on, we will use Newton's notation where possible.
 	
 	We can take the second derivative of our position vector $\bvec{r}$:
-	\begin{equation}
+	\begin{equation*}
 		\bvec{a} = \frac{d^2\bvec{r}}{dt^2} = \frac{d^2x_3\uvec{x}}{dt^2} + \frac{d^2y_3\uvec{y}}{dt^2} + \frac{d^2z_3\uvec{z}}{dt^2}
-	\end{equation}
+	\end{equation*}
 	Our acceleration vector is then expanded to:
-	\begin{equation}
+	\begin{equation*}
 		\bvec{a} = \ddot{x}_3\uvec{x} + 2\dot{x}_3\dot{\uvec{x}} + x_3\ddot{\uvec{x}} + \ddot{y}_3\uvec{y} + 2\dot{y}_3\dot{\uvec{y}} + x_3\ddot{\uvec{y}} + \ddot{z}_3\uvec{z} + 2\dot{z}_3\dot{\uvec{z}} + z_3\ddot{\uvec{z}}
-	\end{equation}
+	\end{equation*}
 	
 	\section{Plotting the Orbit}
 	
