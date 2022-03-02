@@ -1,0 +1,222 @@
+As stated in the introduction, finding out the motion of a satellite around a Lagrange point will be incredibly difficult.
+To prepare for this, let us take a step back and tackle these two scenarios.
+
+\subsection{Simple Linear Differential Equations} \label{sec:ode}
+
+For our first scenario, let us imagine that, for some function $n$ with respect to $t$,
+\begin{equation}\label{eqn:lde1}
+	\frac{dn}{dt} = 4n
+\end{equation}
+In words, the rate of change of the function is equal to itself multiplied by four. Let us say we wanted to find what function $n$ is.
+While it is not as simple to just integrate this equation, we know that $e^x$ is its own derivative.
+We also know that, because of the chain rule, $[e^{kt}]' = ke^{kt}$.
+If we substitute $n$ for $e^{kx}$ and let $k = 4$, then equation \eqref{eqn:lde1} is true.
+Therefore, we can state the following theorem; for some equation
+\begin{equation}\label{eqn:theory1}
+	\frac{dn}{dt} = kn\ \text{,} \quad n = ce^{kt}
+\end{equation}
+where $c$ is some initial constant that cannot be expressed from integrating the derivative.
+We can verify that this theorem is correct using some algebra and integration.
+\begin{align*}
+	\frac{dn}{dt} &= kn \\
+	\frac{1}{n}\, dn &= k\, dt \\
+	\int \frac{1}{n}\, dn &= \int k\, dt \\
+	\ln n + C &= kt + D \\
+	\ln n &= kt + (D - C) \\
+	n &= e^{kt} \cdot e^{D - C} \hspace*{3em}
+\end{align*}
+This will become handy for equations that are only defined by their derivative.
+
+\subsection{Systems of Linear Differential Equations} \label{sec:ode-sys}
+
+The second scenario builds off the first, and involves equations that are defined by each other.
+Consider the following system of equations with functions $x$ and $y$ in terms of $t$:
+\begin{align*}
+	\frac{dx}{dt} &= 4x - 2y \quad &x(0) = 4 \\
+	\frac{dy}{dt} &= 3x - y \quad &y(0) = 2
+\end{align*}
+Here, the rate of change of $x$ is defined in terms of both $x$ and $y$, and same goes for the rate of change of $y$.
+Because these two equations are intertwined, initially it seems impossible to define both $x$ and $y$ as separate from each other.
+However, remembering our previous theorem, Equation \eqref{eqn:theory1}, we can predict that both functions will look something like this:
+\begin{align}
+	x(t) = c_1e^{r_1t} + c_2e^{r_1t} \label{eqn:x-t-general}\\
+	y(t) = c_1e^{r_2t} + c_2e^{r_2t} \label{eqn:y-t-general}
+\end{align}
+Also from Equation \eqref{eqn:theory1}, let us imagine that it is possible to state the rate of change as function of itself multiplied by a constant, $k$.
+\begin{align}
+	\frac{dx}{dt} &= kx = 4x - 2y \label{eqn:kx-sys}\\
+	\frac{dy}{dt} &= ky = 3x - y \label{eqn:ky-sys}
+\end{align}
+Forgetting the fact that we are involving derivatives for a moment, we can try solving for $k$ by solving this linear system though substitution.
+\begin{align}
+	4x - 2y &= kx \nonumber \\
+	(4 - k)x &= 2y \nonumber \\
+	\frac{(4 - k)x}{2} &= y \nonumber \\
+	3x - y &=ky \nonumber \\
+	3x &= (k + 1)y \nonumber \\
+	3x &= (k + 1)\frac{(4 - k)x}{2} \nonumber \\
+	3\cdot2 &= (k + 1)(4 - k) \nonumber \\
+	0 &= (1 + k)(4 - k) - 3\cdot2 \label{eqn:chr-polynomial-ex}
+\end{align}
+By now, we can deduce that there will be two possible values for $k$.
+Continuing the solution,
+\begin{align*}
+	0 &= -k^2 - 3k + 2 \\
+	0 &= (k - 1)(k - 2)
+\end{align*}
+Here, the solutions are $k_1 = 1$ and $k_2 = 2$.
+We don't know exactly what these values \textit{mean}, other than they correspond to $x$ and $y$, respectively.
+Let us see what happens when we plug them into our linear system.
+For $k_1$:
+\begin{equation*}
+	\left. \begin{array}{l}
+		(1)x = 4x - 2y \\
+		(1)y = 3x - y
+	\end{array} \right \}
+	\implies 0 = 3x - 2y \implies 2y = 3x
+\end{equation*}
+This gives us a relationship of $x$ and $y$ where, when $k = 1$, there is a 
+$2 : 3$ ratio between $x$ and $y$.
+This is significant because, for some specific values of $x$, $y$, and $k$, our system of linear equations \textit{converge} in a manner that essentially defines them as the same equation.
+This is easier to understand when graphed.
+\begin{figure}[h!]
+	\centering
+	\captionsetup[subfigure]{justification=centering}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw (-3,0) -- (3,0) node[right] {$x$};
+			\draw (0,-3) -- (0,3) node[above] {$y$};
+			\draw[thick,green] (-1.5, -3) -- (1.5,3);
+			\draw[thick,dashed,red] (-1,-3) -- (1,3);
+			\node at (1,-1) [right,align=right] {$\textcolor{green}{4x - 2x = kx}$ \\
+				$\textcolor{red}{3x - y = ky}$ \\
+				$\textcolor{black}{k = 0}$};
+		\end{tikzpicture}
+		\caption{\small Linear system with $k = 0$.}
+		\label{fig:sample-eigens0}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\begin{tikzpicture}
+			\draw (-3,0) -- (3,0) node[right] {$x$};
+			\draw (0,-3) -- (0,3) node[above] {$y$};
+			\draw[thick,green] (-2, -3) -- (2,3);
+			\draw[thick,dashed,red] (-2,-3) -- (2,3);
+			\filldraw[black] (1,1.5) circle (1.25pt) node[anchor=west] {$\textcolor{black}{(2,3)}$};
+			\node at (1,-1) [right,align=right] {$\textcolor{green}{4x - 2x = kx}$ \\
+				$\textcolor{red}{3x - y = ky}$ \\
+				$\textcolor{black}{k = 1}$};
+		\end{tikzpicture}
+		\caption{\small Linear system with $k = 1$.}
+		\label{fig:sample-eigens1}
+	\end{subfigure}
+	\caption{The linear system defined with regard to $k$. (It is better to think of the graphs as ratios between $x$ and $y$ rather than $y$ as a function of $x$.)}
+	\label{fig:sample-eigens}
+\end{figure}
+In Figure \ref{fig:sample-eigens0}, you can see how, for other values of $k$, the ratios between $x$ and $y$ are different, whereas in Figure \ref{fig:sample-eigens1}, the ratios are the same at $2 : 3$ when $k$ specifically equals 1.
+This means we can express the $x$ term of both functions $x$ and $y$ separately for specific values of $k$, which would be 1 and 2.
+In terms of Equations \eqref{eqn:x-t-general} and \eqref{eqn:y-t-general}, the $x$ term of the function $x$ will have the additional coefficient of 2 while the $x$ term in the function $y$ will have the additional coefficient of 3.
+Therefore, we can add the following to Equations \eqref{eqn:x-t-general} and \eqref{eqn:y-t-general}:
+\begin{align}
+	x(t) = (2)c_1e^{r_1t} + n_3c_2e^{r_2t} \label{eqn:x-t-partial} \\
+	y(t) = (3)c_1e^{r_1t} + n_4c_2e^{r_2t} \label{eqn:y-t-partial}
+\end{align}
+where $n$ expresses the necessary coefficients for each ratio. What role does $k$ play in the solution? To figure out, first we will find the ratio for when $k = 2$.
+\begin{equation*}
+	\left. \begin{array}{l}
+		(2)x = 4x - 2y \\
+		(2)y = 3x - y
+	\end{array} \right \}
+	\implies 0 = x - y \implies y = x
+\end{equation*}
+Here, there is a $1 : 1$ ratio between $x$ and $y$. What happens when we enter initial values for $x$ and $y$ that adhere to this ratio? For example, when $x = 2$ and $y = 2$:
+\begin{gather*}
+	4(2) - 2(2) = 8 - 4 = 4 \\
+	3(2) - (2) = 6 - 2 = 4 
+\end{gather*} % Do we need to set the equations equal to x and y?
+It is as if the initial values were multiplied by the $k$ value!
+This is actually expected, given how we laid out Equations \eqref{eqn:kx-sys} and \eqref{eqn:ky-sys}.
+In this case, $k$ is the common coefficient between both $x$ and $y$ for the derivative of the function $y$.
+\begin{equation*}
+	\frac{dy}{dt} = 2y % THIS NEEDS TO BE CORRECTED!!!!
+\end{equation*}
+This essentially means $k$ can be used as the $r$ values from Equations \eqref{eqn:x-t-general} and \eqref{eqn:y-t-general}.
+Finding the functions $x$ and $y$ is almost complete:
+\begin{align*}
+	x(t) = (2)c_1e^{(1)t} + (1)c_2e^{(2)t} \\
+	y(t) = (3)c_1e^{(1)t} + (1)c_2e^{(2)t}
+\end{align*}
+All that is left is to find the initial constants for each equation given the initial values at the beginning of this scenario.
+\begin{align*}
+	\left. \begin{array}{l}
+		x(0) = 4 = 2c_1 + c_2 \\
+		y(0) = 2 = 3c_1 + c_2
+	\end{array} \right\}
+	&\implies 2 = -c_1 \implies -2 = c_1 \\
+	2 = 3(-2) + c_2 &\implies 8 = c_2 \\
+	x(t) =& -4e^t + 8e^{2t} \\
+	y(t) =& -6e^t + 8e^{2t} 
+\end{align*}
+And that is the solution!
+The reason why we want to understand how to solve this system is because we will encounter a similar system when deriving the equations of motion.
+For that reason, we will also need a general method to solving these systems.
+
+\subsection{General Theorems}
+
+The key concepts that have been explored so far are the solution to a simple differential equation and solving a system of linear differential equations using eigenvalues and eigenvectors.
+The objective of providing these scenarios is to develop an understanding of the concepts that will be used.
+And indeed, the equations of motion that govern the movement around a Lagrange point are differential equations and will require the concepts above to solve numerically.
+However, generalizing the concepts that have been applied so far, so that they can be applied to the equations of motion, will involve more concepts that will over-complicate this paper.
+Therefore, the general theorems that will be applied for the equations of motion must sometimes be asserted.
+
+Before the general theorems are established, is important to understand is how these concepts were used.
+The first concept to know about is a differential equation; when an unknown function is defined alongside its derivative.
+An applicable example of one is the simple equation explored in subsection \ref{sec:ode}, where the solution is an exponential function and whose solution is generalized in Equation \eqref{eqn:theory1}.
+The second concept is a system of differential equations, where not only are there functions defined with relation to their derivatives, but also with relation to each other.
+Equations \eqref{eqn:kx-sys} and \eqref{eqn:ky-sys} are a prime example of this.
+The approach to the solution of these kinds of systems involves the third important concept, which is eigenvalues and eigenvectors.
+The values of $k$ that were found in section \ref{sec:ode-sys} are known as eigenvalues and the ratios that were found alongside them are called eigenvectors.
+The eigenvalues express, as single coefficients, how the system of equations effectively changes given values for each function with respect to the eigenvectors; the ratios between each function.
+We can infer from Equation \eqref{eqn:chr-polynomial-ex} that, for two linear equations,
+\begin{align*}
+	\lambda x_1 &= ax_1 + bx_2 \\
+	\lambda x_2 &= cx_1 + dx_2
+\end{align*}
+The eigenvalues, $\lambda$, are calculated as:
+\begin{equation}
+	0 = (a - \lambda)(d - \lambda) - bc
+\end{equation}
+For a system of three variables and three differential equations:
+\begin{align*}
+	\lambda x_1 &= ax_1 + bx_2 + cx_3 \\
+	\lambda x_2 &= dx_1 + ex_2 + fx_3 \\
+	\lambda x_3 &= gx_1 + hx_2 + ix_3
+\end{align*}
+The eigenvalues are calculated as:
+\begin{align*}
+	0 &= (a - \lambda)[(e - \lambda)(i - \lambda) - fh] + b[d(i - \lambda) - fg] - c[dh - (e - \lambda)g] \\
+	&= (a - \lambda)(e - \lambda)(i - \lambda) + bfg + cdh - cg(e - \lambda) - bd(i - \lambda) - fh(a - \lambda)
+\end{align*}
+Notice how the calculation is, in essence, the calculation for the eigenvalues of three two-equation systems multiplied by the coefficients of the first top-most equation, $a, b, \text{and}\, c$.
+This behaviour can be extrapolated onto the solution for a system of four variables and four differential equations with coefficients $(a_1, a_2, \dots, a_n)$,
+%The key concepts explored through these scenarios are the solutions to systems of linear differential equations, and eigenvalues and eigenvectors.
+%The first concept, differential equations, will appear when solving for the equations of motion and it is imperative that we understand how to approach them.
+%We already know how to approach a single linear differential equation as stated from Equation \eqref{eqn:theory1}. However, when there are multiple differential equations that are defined in terms of each other, we will need eigenvalues and eigenvectors.
+
+%As for the second concept, eigenvalues are the values of $k$ that we found, while eigenvectors are those special ratios between $x$ and $y$ where our system of equations converged to a single line on our graph back in Figure \ref{fig:sample-eigens1}.
+%They are frequently discussed in linear algebra, where eigenvectors are specific vectors that maintain their direction after a linear transformation, and eigenvalues are the factor which the linear transformation scales the eigenvectors.
+%However, linear algebra is significantly beyond the concern of this investigation.
+%Eigenvalues and eigenvectors will be important for solving multiple differential equations who are defined by each other.
+%We can infer from Equation \eqref{eqn:chr-polynomial-ex} that, for two linear differential equations,
+%\begin{align*}
+%	\frac{dx_1}{dt} = ax_1 + bx_2 \\
+%	\frac{dx_2}{dt} = cx_1 + dx_2
+%\end{align*}
+%The eigenvalues, $\lambda$, are calculated as:
+%\begin{equation}
+%	0 = (a - \lambda)(d - \lambda) - bc
+%\end{equation}
+%We will need to generalize this for any number of differential equations, given that there exists only one differential equation for each unknown function.
+%At this point, we have explored the concepts necessary to understand the solutions to systems of differential equations, and further exploration will expand beyond the aims of this paper.

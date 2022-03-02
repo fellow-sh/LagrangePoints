@@ -1,3 +1,4 @@
+from tabnanny import check
 from scipy.optimize import root_scalar
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
@@ -17,6 +18,10 @@ def LN(r):
 
 
 L2 = root_scalar(LN, bracket=[1.50e8, 1.52e8]).root
+
+def solve_lde(f, variable):
+    ...
+
 
 def r1(x,y,z):
     return np.sqrt(x**2 + y**2 + z**2)
