@@ -41,9 +41,9 @@ where $\omega$ is the angular velocity of the object. Understanding that angular
 \begin{equation*}
 	\omega = \frac{2\pi}{T}
 \end{equation*}
-and the period of a circular orbit, from Kepler's third law, as
+and the period of a circular orbit from Kepler's third law as
 \begin{equation*}
-	T = 2\pi\sqrt{\frac{R^3}{G(m_1+m_2)}} % NOTE: this may require citation.
+	T = 2\pi\sqrt{\frac{R^3}{G(m_1+m_2)}} \text{,} % NOTE: this may require citation.
 \end{equation*}
 the equation for angular velocity simplifies to
 \begin{equation*}
@@ -53,7 +53,7 @@ Therefore, the sum of forces acting on an object at a Lagrange point is
 \begin{equation*}
 	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3 \text{.}
 \end{equation*}
-Solving for a radial acceleration of 0, we get the formula
+Solving for a radial acceleration of 0, we get the formula:
 \begin{equation*}
 	0 = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r \text{.}
 \end{equation*}
@@ -67,6 +67,7 @@ To remedy this, the formula is rewritten as such to preserve the sign of $r$:
 %If $m_3$ were positioned between $m_1$ and $m_2$, for example, than the term $-\frac{Gm_2}{(r-R^2)}$ should be positive to show that the acceleration caused by the gravity of $m_2$ is in the outward direction.
 %However, for each of the gravity terms in our equation, $r^2$ and $(r-R)^2$ will always be positive regardless ...
 Further simplification of the formula results in a rational function that is almost impossible to solve by hand, in part because the formula would involve significantly large values due to the constants used.
+%Additionally, there exists the cyclical issue of acceleration being dependent on distance and distance vice versa.
 Instead, the roots of the formula are solved for computationally.
 \begin{figure}[h!]
 	\centering
@@ -94,19 +95,4 @@ Instead, the roots of the formula are solved for computationally.
 %	\caption{Solution for L2 using a GDC.}
 %	\label{fig:radial-l2}
 %\end{figure}
-Relative to the distance from the sun, the locations of the Lagrange points are as follows.
-\begin{table}[h!]
-	\centering
-	\label{tab:lagrange-points}
-	\caption{Distance of the collinear Lagrange points from the Sun}
-	\vspace*{0.3cm}
-	\begin{tabular}{|r|l|}
-		\hline
-		L1 & $1.481\times10^8 \si{\kilo\metre}$ \\
-		\hline
-		L2 & $1.511\times10^8 \si{\kilo\metre}$ \\
-		\hline
-		L3 & $-1.496\times10^8 \si{\kilo\metre}$ \\
-		\hline
-	\end{tabular}
-\end{table}
+Relative to the distance from the sun, the location of the Lagrange point L2 is $1.511\times10^8 \si{\kilo\metre}$.

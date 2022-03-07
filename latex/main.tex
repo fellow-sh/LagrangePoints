@@ -18,11 +18,13 @@
 \usepackage[margin=1in]{geometry}		% document layout package
 
 \usepackage[notes,backend=biber]{biblatex-chicago} % citation styling
+\usepackage{endnotes}
 \usepackage[english]{babel}				% language package
 \usepackage[autostyle=true]{csquotes}	% extended quotation functionality
 \usepackage{hyperref}					% hypertext support
 
 \usepackage{setspace}					% easy text spacing
+\usepackage[toc,page]{appendix}
 %\usepackage{newtxtext,newtxmath} 		% times new roman, more up to date
 
 % Standard ihat and jhat are not implemented by default.
@@ -34,8 +36,8 @@
 % Declare bibliography as the 'references.bib' file
 \bibliography{references}
 
-% Set doublespacing
-\doublespacing
+% Set half spacing
+\onehalfspacing
 %\renewcommand{\baselinestretch}{1.5}
 
 % Custom text formatting
@@ -75,7 +77,7 @@
 \begin{document}
 	\input{titlepage}
 	
-	\tableofcontents
+	{\singlespacing \tableofcontents}
 	
 	\newpage
 	
@@ -87,11 +89,9 @@
 	
 	\input{sections/section1}
 	
-	\section{Setup Scenarios for Equations of Motion}
+	\section{Preparation for Equations of Motion}
 	
 	\input{sections/section2}
-	
-	\newpage
 	
 	\section{Deriving Equations of Motion}
 	
@@ -105,7 +105,15 @@
 	
 	\printbibliography[
 	heading=bibintoc,
-	title={References}
+	title={Bibliography}
 	]
+	
+	\newpage
+	
+	\appendix
+	
+	\section{Eigenvalues for Larger Systems} \label{app:eigen}
+	
+	\input{sections/appendixa}
 	
 \end{document}
