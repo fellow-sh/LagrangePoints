@@ -1,5 +1,4 @@
-As stated in the introduction, finding out the motion of a satellite around a Lagrange point will be incredibly difficult.
-To prepare for this, let us take a step back and tackle these two scenarios.
+As stated in the introduction, finding out the motion of a satellite around a Lagrange point will require us to expand the math that is currently known from IB. 
 
 \subsection{Simple Linear Differential Equations} \label{sec:ode}
 
@@ -7,16 +6,16 @@ Let us imagine that, for some function $f$ with respect to $t$,
 \begin{equation}\label{eqn:lde1}
 	\frac{d}{dt}f(t) = 4f(t)\text{.}
 \end{equation}
-In words, the rate of change of the function $f$ is equal to itself multiplied by four. Let us say we wanted to find what function $f$ is.
-While it is not as simple to just integrate this equation, we know that $e^x$ is its own derivative.
+In other words, the rate of change of the function $f$ is equal to itself multiplied by four. Let us say we wanted to find what function $f$ is.
+While it is not as simple as to integrate this equation, we know that $e^x$ is its own derivative.
 We also know that, because of the chain rule, $[e^{kt}]' = ke^{kt}$.
 If we substitute $f(t)$ for $e^{kt}$ and let $k = 4$, then Equation \eqref{eqn:lde1} is true.
-Therefore, we can state the following theorem; for any equation
+Therefore, we can state the following \textbf{theorem}; for any equation
 \begin{equation}\label{eqn:theory1}
 	\frac{d}{dt}f(t) = kf(t)\ :\ f(t) = ce^{kt}
 \end{equation}
 where $c$ is some initial constant that cannot be expressed from integrating the derivative.
-We can verify that this theorem is correct by employing separation of variables (where $y = f(x)$):
+We can verify that this theorem is correct using some algebra and rearranging variables (where $y = f(x)$):
 \begin{align*}
 	\frac{dy}{dx} &= ky \\
 	\frac{1}{y}\, dy &= k\, dx \\
@@ -26,19 +25,19 @@ We can verify that this theorem is correct by employing separation of variables 
 	y &= e^{kt} \cdot e^{D - C},\ \text{let}\ c = e^{D - C} \\
 	y &= ce^{kt} \text{.}
 \end{align*}
-Equation \eqref{eqn:lde1} is an example of a differential equation, where a function is defined by its derivatives. Differential equations are very common in physics and will also appear in our equations of motion.
+Equation \eqref{eqn:lde1} is an example of a differential equation, where a function is defined by its derivatives. Differential equations are very common in physics and will be how our equations of motion will be defined.
 
 \subsection{Eigenvalues and Eigenvectors} \label{sec:eigens}
 
-Imagine that there are two species ants, $p$ and $q$, whose populations are dependent on each other.
-That is to say that both species try to kill the other species whilst reproducing their own.
+Imagine that there are two species of ants, $p$ and $q$, whose populations are dependent on each other.
+That is to say that both species try to kill the other species while repopulating their own.
 We can represent the populations of these two ant species through the following recursive system of equations:
 \begin{align*}
 	p_{n+1} &=\ \ 4p_n - 2q_n \\
 	q_{n+1} &= -3p_n + 5q_n \text{,}
 \end{align*}
 where each recursive step $n$ represents some interval of time.
-Say we knew that, for some initial population of both species, their population would double after the given time interval and we wanted to know what that initial population would be.
+Say we knew that, for some initial population of both species, their population would double after the given time interval and we want to know what that initial population would be.
 We can determine the initial population by changing our system:
 \begin{align*}
 	2p_k &=\ \ 4p_k - 2q_k \\
@@ -58,8 +57,9 @@ Here, $p_k = q_k$ indicates that any amount of ants is a solution so long as bot
 	2(200) &=\quad \!4(200) - 2(200) = 400 \\
 	2(200) &= -3(200) + 5(200) = 400 \text{.}
 \end{align*}
-In linear algebra, the idea of a linear system with a set of variables being equivalent to scaling said variables is termed an eigenvalue. 
-More precisely, an eigenvalue is a numerical constant which represents the factor of which an eigenvector (in our case, ratio of initial ant populations) is scaled (which would be 2).
+In linear algebra, the idea of a linear system with a set of variables being equivalent to scaling said variables is termed an eigenvalue. % more elaboration?
+More precisely, an eigenvalue is a numerical constant which represents the factor of which an eigenvector is scaled.
+In the case of the ants, the eigenvalue is 2, 
 Because linear algebra is beyond the scope of this investigation, we will only explore what is necessary to understand orbital motion.
 
 It is, in fact, possible to determine both the eigenvalues and eigenvectors of most linear systems without knowing either to begin with.
@@ -99,11 +99,11 @@ From Equation \eqref{eqn:chr-polynomial-ex}, we can generalize the computation o
 	0 = (a - \lambda)(d - \lambda) - bc \text{,}
 \end{equation*}
 where $a,b,c,d$ are the coefficients of the linear system. This computation of solving for eigenvalues can be extrapolated for larger systems involving $n$ variables and $n$ equations.
-For a linear system with 3 variables and 3 equations:
+For a linear system with 3 variables, 3 equations and 9 constants $a, b, \dots, i$:
 \begin{equation*}
 	0 = (a - \lambda)((e - \lambda)(i - \lambda) - fh) - b(d(i - \lambda) - fg) + c(dh - eg) \text{.}
 \end{equation*}
-And for 4 variables and 4 equations:
+And for 4 variables, 4 equations,and :
 \begin{equation*}
 	1 = 1 
 \end{equation*}
@@ -119,7 +119,8 @@ From what has already been established, this relation would be defined as:
 	p'(t) &=\ \ 4p(t) - 2q(t) &p(0) = 4\\
 	q'(t) &= -3p(t) + 5q(t) &q(0) = 2
 \end{align*}
-\begin{figure}[h!]
+The approach to solving for $p(t)$ and $p(t)$ is not immediately intuitive. Now is a good time to view eigenvalues and eigenvectors in a more abstract manner.
+\begin{figure}[H]
 	\centering
 	\captionsetup[subfigure]{justification=centering}
 	\begin{subfigure}[b]{0.4\textwidth}
@@ -155,7 +156,6 @@ From what has already been established, this relation would be defined as:
 	\caption{The linear system defined with regard to $\lambda$ (It is better to think of the graphs as ratios between $p$ and $q$ rather than $q$ as a function of $p$).}
 	\label{fig:sample-eigens}
 \end{figure}
-The approach to solving for $p(t)$ and $p(t)$ is not immediately intuitive. Now is a good time to view eigenvalues and eigenvectors in a more abstract manner.
 In Figure \ref{fig:sample-eigens0}, where the $p$ and $q$ are viewed as a set of values, the equations representing the ant species are on different lines with an intersection at $(0,0)$. 
 In comparison, in Figure \ref{fig:sample-eigens1}, the equations have converged onto the same line when $\lambda = 7$.
 This can be thought of as, for each eigenvalue, $p'(t)$ and $q'(t)$ are transformed onto a function which both share in common.
@@ -168,18 +168,18 @@ The eigenvalues can define these `common' functions as:
 and are connected back to the functions $p(t)$ and $q(t)$ by the eigenvectors:
 \begin{align*}
 	p(t) &= (1)x(t) + (-2)y(t) \\
-	q(t) &= (1)x(t) + (3)y(t) \text{.}
+	q(t) &= (1)x(t) + (3)y(t)
 \end{align*}
-What we have essentially done is factored out a group of functions $x(t)$ and $y(t)$ from the linear system that are much easier to to solve as well as a set of coefficients, the eigenvectors, that relate $x(t)$ and $y(t)$ to $p(t)$ and $q(t)$.
+What we have essentially done is factored out a group of functions $x(t)$ and $y(t)$ from the linear system that are much easier to to solve alongside a set of coefficients, the eigenvectors, that relate $x(t)$ and $y(t)$ to $p(t)$ and $q(t)$.
 Solving for the `common' functions:
 \begin{align*}
 	x'(t) &= 2x(t) & x(t) &= c_1e^{2t} \\
-	y'(t) &= 7y(t) & y(t) &= c_2e^{7t} \text{.}
+	y'(t) &= 7y(t) & y(t) &= c_2e^{7t}
 \end{align*}
 Then we relate the these back to our original functions:
 \begin{align*}
 	p(t) &= c_1e^{2t} - 2c_2e^{7t} \\
-	q(t) &= c_1e^{2t} + 3c_2e^{7t} \text{.}
+	q(t) &= c_1e^{2t} + 3c_2e^{7t}
 \end{align*}
 All that is left is to solve for the given initial conditions:
 \begin{align*}
