@@ -1,75 +1,70 @@
-We will be determining the collinear Lagrange points from a rotating frame of reference relative to a circular orbit of Earth.
-This simplifies the solution to a single dimension which bisects the Sun and Earth. % ELABORATE
+From a basic understanding of classical mechanics, we can determine the location of Lagrange points. Before we do any math on Lagrange points, its important to know what they are exactly. According to NASA, Lagrange points are special solutions in what is know as the ``three-body problem.'' At these points in space, the gravitational and rotational forces of the other two bodies effectively cancel each other out, allowing small objects to seemingly stay in place\autocite{JWSTOrbit}.
+
+With this in mind, lets consider a simple system of two static masses, $m_1$ and $m_2$, where $m_1 > m_2$.
 
 \vspace*{0.5cm}
 \begin{figure}[!h]
 	\centering
 	\begin{tikzpicture}
-		\draw[gray,thick] (-4,0) -- (4,0);
+		\draw[gray,thick] (-4,0) -- (3,0);
 		\filldraw (-4,0) circle (4pt) node[anchor=south]{$m_1$};
 		\filldraw (3,0) circle (3pt) node[anchor=south]{$m_2$};
-		\filldraw (4,0) circle (2pt) node[anchor=south]{$m_3$};
+		\filldraw (2,0) circle (2pt) node[anchor=south]{$m_3$};
 		\draw[decorate,decoration={brace,amplitude=5pt,raise=3ex}] (-4,0) -- (3,0) node[midway,yshift=27pt]{$R$};
-		\draw[decorate,decoration={brace,mirror,amplitude=5pt,raise=2ex}] (-4,0) -- (4,0) node[midway,yshift=-2em]{$r$};
+		\draw[decorate,decoration={brace,mirror,amplitude=5pt,raise=2ex}] (-4,0) -- (2,0) node[midway,yshift=-2em]{$r$};
 	\end{tikzpicture}
 	\vspace*{0.25cm}
-	\caption{Simple diagram of the Sun-Earth system.}
+	\caption{System of two stationary bodies.}
 	\label{fig:collinear-coords}
 \end{figure}
 
-\textit{R} will be the distance between the Sun and Earth, while \textit{r} will be the distance from the main body to the Lagrange point. 
-The masses of the Sun, Earth, and a point located at the Lagrange point are denoted by $m_1$, $m_2$, and $m_3$, respectively.
-For the sake of maintaining direction, bodies positioned to the right will have a positive distance, and vice versa.
-
-It is important to understand what factors are at play when dealing with Lagrange points.
-What will be most important is Newton's Law of Gravitation,
+In Figure \ref{fig:collinear-coords}, $R$ represents the distance between the two bodies, and $r$ represents the distance from the first body to the equilibrium point, point mass $m_3$, where the net gravitational force is 0. Using Newton's Law of Gravitation,
 \begin{equation}
 	F = \frac{Gm_1m_2}{r^2}
 \end{equation}
-where \textit{F} is the force exerted between two bodies of mass, \textit{G} is the gravitational constant, m is the mass of a body, and \textit{r} is the distance between the two bodies.
-%The sum of forces acting on our fictional object $m_3$ due to gravity is then
-%\begin{equation}
-%	F = -\frac{Gm_1m_3}{r^3} - \frac{Gm_2m_3}{(r-R)^3}
-%\end{equation}
-We must also consider the centrifugal and Coriolis forces acted on the object at the Lagrange point.
-We can rule out the Coriolis force, since the collinear Lagrange points will not be moving in our rotating frame of reference.
-As for centrifugal force, it will be proportional to the centripetal force,
+where F is the force exerted between two bodies of mass and G is the gravitational constant, we can write the net force of the system as:
 \begin{equation*}
-	F = m\omega^2r
+	\frac{Gm_1m_3}{r^2} = \frac{Gm_2m_3}{(R - r)^2}
 \end{equation*}
-where $\omega$ is the angular velocity of the object. Understanding that angular velocity can be defined as
+If we let $m_1 = 4m_2$ and $R = 1$, than we can directly solve for $r$:
+\begin{align*}
+	\frac{m_1}{r^2} &= \frac{m_2}{(R - r)^2} \\
+	\left(\frac{R - r}{r}\right)^2 &= \frac{m_2}{m_1} \\
+	\left(\frac{1 - r}{r}\right)^2 &= \frac{m_2}{4m_2} \\
+	\frac{1 - r}{r} &= \frac{1}{2} \\
+	2 - 2r &= r \\
+	\frac{2}{3} &= r
+\end{align*}
+This non-dimensional look on problems like these will come in handy to simplify more involved equations.
+
+Of course, this scenario is not exemplary of Lagrange points, let alone the interaction between celestial bodies. Let us think increase the complexity of our initial system by having $m_2$ orbit $m_1$. With consideration for rotational force, centripetal force is expressed as:
 \begin{equation*}
-	\omega = \frac{2\pi}{T}
+	F = \frac{4\pi^2m_3r}{T^2}
 \end{equation*}
-and the period of a circular orbit from Kepler's third law as
+where $T$ expresses the orbital period of $m_3$. Given that, from Kepler's Third Law,
 \begin{equation*}
-	T = 2\pi\sqrt{\frac{R^3}{G(m_1+m_2)}} \text{,} % NOTE: this may require citation.
+	T = 2\pi \sqrt{\frac{R^3}{G(m_1 + m_2)}}
 \end{equation*}
-the equation for angular velocity simplifies to
+centripetal force can be rewritten as:
 \begin{equation*}
-	\omega^2 = \frac{G(m_1+m_2)}{R^3} \text{.} % NOTE: Gravitational Parameter is the sum of the two major masses. Citation^^?
-\end{equation*} % You should add details as to why we are evaluating the radial acceleration. THERE IS A DISCEPENCY IN THE ALGREBRA!
-Therefore, the sum of forces acting on an object at a Lagrange point is
-\begin{equation*}
-	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3 \text{.}
+	F = \frac{G(m_1+m_2)}{R^3}rm_3
 \end{equation*}
-Solving for a radial acceleration of 0, we get the formula:
+Therefore, the net force between $m_1$ and $m_2$ is written as:
 \begin{equation*}
-	0 = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r \text{.}
+	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3
 \end{equation*}
-Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$.
-It is worth noting that, with respect to direction, $r^2$ and $(r-R)^2$ will only reflect acceleration in the negative direction and will not be sufficient to tell us where L1 and L3 are.
-To remedy this, the formula is rewritten as such to preserve the sign of $r$:
+Solving for a radial acceleration, we get the formula:
 \begin{equation*}
-	0 = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r \text{.}
+	a = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r
 \end{equation*}
-%The sign of each term in the equation is important to represent which direction acceleration is being applied.
-%If $m_3$ were positioned between $m_1$ and $m_2$, for example, than the term $-\frac{Gm_2}{(r-R^2)}$ should be positive to show that the acceleration caused by the gravity of $m_2$ is in the outward direction.
-%However, for each of the gravity terms in our equation, $r^2$ and $(r-R)^2$ will always be positive regardless ...
-Further simplification of the formula results in a rational function that is almost impossible to solve by hand, in part because the formula would involve significantly large values due to the constants used.
-%Additionally, there exists the cyclical issue of acceleration being dependent on distance and distance vice versa.
-Instead, the roots of the formula are solved for computationally.
-\begin{figure}[h!]
+Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$, given that the net radial acceleration is 0.
+It is worth noting that, with respect to direction, $r^2$ and $(r-R)^2$ will only reflect acceleration due to gravity in the negative direction and will not be sufficient to tell us where L1 and L3 are.
+Knowing that, cautiously, $n^2 = n \times |n|$, the formula is rewritten as such to preserve the sign of $r$:
+\begin{equation*}
+	a = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r
+\end{equation*}
+To save ourselves the agony of whether it is possible to isolate for $r$, we will use Python to plot the radial acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
+\begin{figure}[H]
 	\centering
 	\captionsetup[subfigure]{justification=centering}
 	\begin{subfigure}[b]{0.4\textwidth}
@@ -86,13 +81,20 @@ Instead, the roots of the formula are solved for computationally.
 		\label{fig:radial-accel-earth}
 	\end{subfigure}
 	\label{fig:radial-accel}
-	\caption{Net acceleration of the Sun-Earth system. Graphs are created using \texttt{matplotlib}.}
-\end{figure} % this figure can benefit from an explanation
+	\caption{Net acceleration of the Sun-Earth system. Graphs are created using the matplotlib Python library.}
+\end{figure}
+Given that we are only concerned with L2, the distance of L2 from the Sun is computed as $1.511 \times 10^8 \si{\kilo\metre}$.
 
-%\begin{figure}[h!]
+%\begin{figure}[!h]
 %	\centering
-%	\includegraphics[scale=0.7]{accel-root.png}
-%	\caption{Solution for L2 using a GDC.}
-%	\label{fig:radial-l2}
+%	\begin{tikzpicture}
+%		\draw[grey,thick] (0,0) circle (2);
+%		\filldraw (0,0) circle (3pt) node[anchor=north east]{$m_1$};
+%		\filldraw (1.41, 1.41) circle (2pt) node[anchor=south west]{$m_2$};
+%		\draw[thick,<-] (0.71,0.71) -- (1.41,1.41);
+%		\node at (0.71, 0.71) [below,align=right]{$a$};
+%	\end{tikzpicture}
+%\vspace*{0.25cm}
+%\caption{Orbit of }
+%\label{fig:orbit}
 %\end{figure}
-Relative to the distance from the sun, the location of the Lagrange point L2 is $1.511\times10^8 \si{\kilo\metre}$.
