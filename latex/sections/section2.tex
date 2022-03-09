@@ -62,7 +62,7 @@ Taking their first derivatives, we get:
 And their second derivatives:
 \begin{gather*}
 	\uvec{x}'' = \theta''\uvec{y} + \theta'\uvec{y}' = \theta''\uvec{y} - \theta'^2\uvec{x} \\
-	\uvec{x}'' = \theta''\uvec{y} + \theta'\uvec{x}' = -\theta''\uvec{x} - \theta'^2\uvec{y} \text{.}
+	\uvec{y}'' = \theta''\uvec{y} + \theta'\uvec{x}' = -\theta''\uvec{x} - \theta'^2\uvec{y} \text{.}
 \end{gather*}
 The position vector $r$ is expressed as:
 \begin{equation*}
@@ -77,6 +77,7 @@ Our acceleration vector is then expanded to:
 	\bvec{a} = x_3''\uvec{x} + 2x_3'\uvec{x}' + x_3\uvec{x}'' + y_3'\uvec{y} + 2y_3'\uvec{y}' + x_3\uvec{y}'' + z_3''\uvec{z} + 2z_3'\uvec{z}' + z_3\uvec{z}''
 \end{equation*}
 Substituting the derivatives of the basis vectors that we calculated earlier,
-\begin{align*}
-	1=1
-\end{align*}
+\begin{gather*}
+		\bvec{a} = x_3''\uvec{x} + 2x_3'(\theta'\uvec{y}) + x_3(\theta''\uvec{y} - \theta'^2\uvec{x}) + y_3''\uvec{y} - 2y_3'(\theta'\uvec{x}) - x_3(\theta''\uvec{x} + \theta'\uvec{y}) + z_3''\uvec{z} \\
+		\bvec{a} = (x_3'' - \theta'^2x_3 - 2y_3'\theta' - y_3\theta'')\uvec{x} + (y_3'' + 2x_3'\theta' - \theta'^2y_3 + x_3\theta'')\uvec{y} + z_3''\uvec{z}
+\end{gather*}

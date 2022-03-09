@@ -53,11 +53,18 @@ def nonlinear_EOM(t, X):
     return Xdot
 
 
-def init_vy(lpoint, distance):
-    x= lpoint + distance
-    a = x*G*(m1+m2)/(R**3) - x*G*m1/(x**3) - G*m2*(R-x)/(x**3)
-    print(a)
-    return np.sqrt(a*distance)
+def init_v(lpoint, position: tuple):
+    x= lpoint + position[0]
+    y= position[1]
+    R1 = r1(x, y, 0)
+    R2 = r2(x, y, 0)
+    ax = x*G*(m1+m2)/(R**3) - x*G*m1/(R1**3) - G*m2*(R-x)/(R2**3)
+    ay = y*G*(m1+m2)/(R**3) - y*G*m1/(R1**3) - y*G*m2/(R2**3)
+    print(ax)
+    vx = np.sqrt(ax*position[0])
+    vy = np.sqrt(ay*position[1])
+    return (vx,vy)
+
 
 def main2():
     fig, ax = plt.subplots()
@@ -67,21 +74,26 @@ def main2():
     ax.set_ylim(-0.01, 0.01)
     plt.show()
 
+
 def main():
+    distance = 1000
+    iydot, ixdot = list(map(lambda x : x*2, init_v(L2, (distance,0,0))))
+    print(iydot, ixdot, sep='\n')
     ixdot = 0
-    iydot = 0.0014777#init_vy(L2, 1000) # ms-1
-    print(init_vy(L2, 100))
-    CONDITION_0 = np.array([L2 - 100, 0, 0, ixdot, iydot, 0])
+    # precision in the initial conditions is crucial
+    iydot = 0.0147763 #2*init_vy(L2, (distance,0,0)) # ms-1
+    print(init_v(L2, (distance,0,0)))
+    CONDITION_0 = np.array([L2 - distance, 0, 0, ixdot, iydot, 0])
     EOMs = nonlinear_EOM
-    traj = solve_ivp(EOMs, [0,28*24*3600], CONDITION_0, atol=0.000001, rtol=3e-14)
+    traj = solve_ivp(EOMs, [0,36*24*3600], CONDITION_0, atol=1e-6, rtol=3e-14)
 
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
     ax.plot(traj.y[0,:], traj.y[1,:], traj.y[2,:], 'b')
     ax.plot(L2, 0, 0, 'k+')
-    ax.plot(L2-100, 0, 0, 'r+')
+    ax.plot(L2-distance, 0, 0, 'r+')
 
-    bound = 500
+    bound = 5*distance
     ax.axes.set_xlim3d(left=L2 - bound, right=L2 + bound)
     ax.axes.set_ylim3d(bottom=-bound, top=bound)
     ax.axes.set_zlim3d(bottom=-bound, top=bound)
