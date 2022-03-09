@@ -30,6 +30,7 @@ It is also asserted that $m_2 > m_3$, so that, similarly to the previous asserti
 Secondly, continuing with the conditions from the previous calculations, it is assumed that the Earth is in a circular orbit, making the system a little easier to comprehend.
 Thirdly, we assume that the orbit of the Earth has no inclination, meaning that it is on the same plane as $\uvec{x}$ and $\uvec{y}$.
 Lastly, and as shown in Figure \ref{fig:3d-coords}, we will have basis vectors $\uvec{x}$, $\uvec{y}$, and $\uvec{z}$ drawn relative to the orbit of the Earth, with initial vectors $\uvec{x}_0$, $\uvec{y}_0$, and $\uvec{z}_0$.
+This is necessary to keep track of three dimensional space around the Lagrange points and also so that we can compose our vectors in terms of each dimension.
 The satellite around L2, $m_3$, will have the coordinates $(x_3,y_3,z_3)$ represented by the vector $\bvec{r}$.
 
 It is also important to acknowledge that we will need to take the derivative of vectors. Hence, let us assert that, for some vector \textbf{v} with the basis vectors $\uvec{i}$ and $\uvec{j}$ scalars $a$ and $b$:
@@ -43,11 +44,13 @@ This will allow us to analyze the movement of an object through kinematics in al
 
 One last thing: because we are dealing with vectors, Newton's law of gravitation can be rewritten in vector form:
 \begin{equation*}
-	\bvec{F} = \frac{Gm_1m_2}{r^3}\bvec{r}
+	\bvec{F} = m\bvec{a} = \frac{Gm_1m_2}{r^3}\bvec{r}
 \end{equation*}
 where $r$ is the magnitude of $\bvec{r}$.
 
-To start off, let us analyze our basis vectors. Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account:
+To start off, let us analyze our basis vectors.
+We will use the notation $x'$ as the derivative of $x$ with respect to $t$.
+Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account:
 \begin{gather*}
 	\uvec{x} = (\cos\theta)\uvec{x}_0 + (\sin\theta)\uvec{y}_0 \\
 	\uvec{y} = -(\sin\theta)\uvec{x}_0 + (\cos\theta)\uvec{y}_0 \\
@@ -78,6 +81,17 @@ Our acceleration vector is then expanded to:
 \end{equation*}
 Substituting the derivatives of the basis vectors that we calculated earlier,
 \begin{gather*}
-		\bvec{a} = x_3''\uvec{x} + 2x_3'(\theta'\uvec{y}) + x_3(\theta''\uvec{y} - \theta'^2\uvec{x}) + y_3''\uvec{y} - 2y_3'(\theta'\uvec{x}) - x_3(\theta''\uvec{x} + \theta'\uvec{y}) + z_3''\uvec{z} \\
-		\bvec{a} = (x_3'' - \theta'^2x_3 - 2y_3'\theta' - y_3\theta'')\uvec{x} + (y_3'' + 2x_3'\theta' - \theta'^2y_3 + x_3\theta'')\uvec{y} + z_3''\uvec{z}
+	\bvec{a} = x_3''\uvec{x} + 2x_3'(\theta'\uvec{y}) + x_3(\theta''\uvec{y} - \theta'^2\uvec{x}) + y_3''\uvec{y} - 2y_3'(\theta'\uvec{x}) - x_3(\theta''\uvec{x} + \theta'\uvec{y}) + z_3''\uvec{z} \\
+	\bvec{a} = (x_3'' - \theta'^2x_3 - 2y_3'\theta' - y_3\theta'')\uvec{x} + (y_3'' + 2x_3'\theta' - \theta'^2y_3 + x_3\theta'')\uvec{y} + z_3''\uvec{z}
+\end{gather*}
+This equation represents the general centripetal acceleration of an object in circular motion in three dimensions.
+To account for gravity, the force due to gravity is expressed as:
+\begin{gather*}
+	\bvec{F} = \frac{Gm_1m_3}{r_1}\bvec{r}_1 + \frac{Gm_2m_3}{r_2}\bvec{r}_2
+\end{gather*}
+Where $\bvec{r}_1$ and $\bvec{r}_2$ is the distance of our satellite from $m_1$ and $m_2$, respectively.
+Their scalars are calculated as:
+\begin{gather*}
+	r_1 = \sqrt{x_3^2 + y_3^2 + z_3^2} \\
+	r_2 = \sqrt{(x_3 - R)^2 + y_3^2 + z_3^2} 
 \end{gather*}

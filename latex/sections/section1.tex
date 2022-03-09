@@ -51,7 +51,7 @@ Therefore, the net force between $m_1$ and $m_2$ is written as:
 \begin{equation*}
 	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3
 \end{equation*}
-Solving for a radial acceleration, we get the formula:
+Solving for the centripetal acceleration, we get the formula:
 \begin{equation*}
 	a = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r
 \end{equation*}
@@ -61,14 +61,14 @@ Knowing that, cautiously, $n^2 = n \times |n|$, the formula is rewritten as such
 \begin{equation*}
 	a = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r
 \end{equation*}
-To save ourselves the agony of whether it is possible to isolate for $r$, we will use Python to plot the radial acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
+To save ourselves the agony of whether it is possible to isolate for $r$, we will use Python to plot the centripetal acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
 \begin{figure}[H]
 	\centering
 	\captionsetup[subfigure]{justification=centering}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[scale=0.6]{r-accel-figure-1.png}
-		\caption{\footnotesize Radial Acceleration between the Sun and Earth.}
+		\caption{\footnotesize Radial acceleration between the Sun and Earth.}
 		\label{fig:radial-accel-system}
 	\end{subfigure}
 	\hspace*{1cm}
@@ -79,7 +79,7 @@ To save ourselves the agony of whether it is possible to isolate for $r$, we wil
 		\label{fig:radial-accel-earth}
 	\end{subfigure}
 	\label{fig:radial-accel}
-	\caption{Net acceleration vs distance of the Sun-Earth system. Graphs are created using the matplotlib Python library.}
+	\caption{Net radial acceleration vs distance of the Sun-Earth system. Graphs are created using the matplotlib Python library.}
 \end{figure}
 Given that we are only concerned with L2, the distance of L2 from the Sun is computed as $1.511 \times 10^8 \si{\kilo\metre}$.
 
