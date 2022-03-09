@@ -28,7 +28,7 @@ Firstly, we must assert that $m_1 > m_2$, allowing the movement of the Sun due t
 This allows the Sun to be placed at the center of the coordinate system, avoiding the need to make considerations for the center of mass of the system.
 It is also asserted that $m_2 > m_3$, so that, similarly to the previous assertion, the satellite has a negligible effect on Earth.
 Secondly, continuing with the conditions from the previous calculations, it is assumed that the Earth is in a circular orbit, making the system a little easier to comprehend.
-Thirdly, we assume that Earth is orbiting on a plane that exists on the span of $\uvec{x}$ and $\uvec{y}$.
+Thirdly, we assume that the orbit of the Earth has no inclination, meaning that it is on the same plane as $\uvec{x}$ and $\uvec{y}$.
 Lastly, and as shown in Figure \ref{fig:3d-coords}, we will have basis vectors $\uvec{x}$, $\uvec{y}$, and $\uvec{z}$ drawn relative to the orbit of the Earth, with initial vectors $\uvec{x}_0$, $\uvec{y}_0$, and $\uvec{z}_0$.
 The satellite around L2, $m_3$, will have the coordinates $(x_3,y_3,z_3)$ represented by the vector $\bvec{r}$.
 
@@ -47,27 +47,36 @@ One last thing: because we are dealing with vectors, Newton's law of gravitation
 \end{equation*}
 where $r$ is the magnitude of $\bvec{r}$.
 
-To start off, let us analyze our basis vectors. Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account.
+To start off, let us analyze our basis vectors. Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account:
 \begin{gather*}
 	\uvec{x} = (\cos\theta)\uvec{x}_0 + (\sin\theta)\uvec{y}_0 \\
 	\uvec{y} = -(\sin\theta)\uvec{x}_0 + (\cos\theta)\uvec{y}_0 \\
-	\uvec{z} = \uvec{z}_0
+	\uvec{z} = \uvec{z}_0 \text{.}
 \end{gather*}
 Taking their first derivatives, we get:
 \begin{gather*}
-	\uvec{x}' = -(\sin\theta)\theta'\uvec{x}_0 + (\cos\theta)\theta'\uvec{y}_0 = \theta'\uvec{y}
+	\uvec{x}' = -(\sin\theta)\theta'\uvec{x}_0 + (\cos\theta)\theta'\uvec{y}_0 = \theta'\uvec{y} \\
+	\uvec{y}' = -(\cos\theta)\theta'\uvec{x}_0 + (-\sin\theta)\theta'\uvec{y}_0 = -\theta'\uvec{x} \\
+	\uvec{z}' = 0 \text{.}
 \end{gather*}
-
-Taking from my understanding of vectors, the position of a satellite can be expressed as:
+And their second derivatives:
+\begin{gather*}
+	\uvec{x}'' = \theta''\uvec{y} + \theta'\uvec{y}' = \theta''\uvec{y} - \theta'^2\uvec{x} \\
+	\uvec{x}'' = \theta''\uvec{y} + \theta'\uvec{x}' = -\theta''\uvec{x} - \theta'^2\uvec{y} \text{.}
+\end{gather*}
+The position vector $r$ is expressed as:
 \begin{equation*}
 	\bvec{r} = x_3\uvec{x} + y_3\uvec{y} + z_3\uvec{z}
 \end{equation*}
-
-We can take the second derivative of our position vector $\bvec{r}$:
+We can take the second derivative of our position vector $\bvec{r}$ to find the acceleration.
 \begin{equation*}
-	\bvec{a} = \frac{d^2\bvec{r}}{dt^2} = \frac{d^2x_3\uvec{x}}{dt^2} + \frac{d^2y_3\uvec{y}}{dt^2} + \frac{d^2z_3\uvec{z}}{dt^2}
+	\bvec{a} = \bvec{r}'' = (x_3\uvec{x})'' + (y_3\uvec{y})'' + (z_3\uvec{z})''
 \end{equation*}
 Our acceleration vector is then expanded to:
 \begin{equation*}
-	\bvec{a} = \ddot{x}_3\uvec{x} + 2\dot{x}_3\dot{\uvec{x}} + x_3\ddot{\uvec{x}} + \ddot{y}_3\uvec{y} + 2\dot{y}_3\dot{\uvec{y}} + x_3\ddot{\uvec{y}} + \ddot{z}_3\uvec{z} + 2\dot{z}_3\dot{\uvec{z}} + z_3\ddot{\uvec{z}}
+	\bvec{a} = x_3''\uvec{x} + 2x_3'\uvec{x}' + x_3\uvec{x}'' + y_3'\uvec{y} + 2y_3'\uvec{y}' + x_3\uvec{y}'' + z_3''\uvec{z} + 2z_3'\uvec{z}' + z_3\uvec{z}''
 \end{equation*}
+Substituting the derivatives of the basis vectors that we calculated earlier,
+\begin{align*}
+	1=1
+\end{align*}
