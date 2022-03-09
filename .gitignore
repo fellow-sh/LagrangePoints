@@ -7,3 +7,5 @@
 *.synctex.gz
 *.out
 *.toc 
+*.fls
+*.fdb*

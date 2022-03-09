@@ -49,7 +49,7 @@ One last thing: because we are dealing with vectors, Newton's law of gravitation
 where $r$ is the magnitude of $\bvec{r}$.
 
 To start off, let us analyze our basis vectors.
-We will use the notation $x'$ as the derivative of $x$ with respect to $t$.
+We will use the notation $x'$ as the derivative of $x$ with respect to time $t$.
 Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ rotate about the origin), their movement must be taken into account:
 \begin{gather*}
 	\uvec{x} = (\cos\theta)\uvec{x}_0 + (\sin\theta)\uvec{y}_0 \\
@@ -67,6 +67,7 @@ And their second derivatives:
 	\uvec{x}'' = \theta''\uvec{y} + \theta'\uvec{y}' = \theta''\uvec{y} - \theta'^2\uvec{x} \\
 	\uvec{y}'' = \theta''\uvec{y} + \theta'\uvec{x}' = -\theta''\uvec{x} - \theta'^2\uvec{y} \text{.}
 \end{gather*}
+Given that this is uniform circular motion, $\theta'' = 0$.
 The position vector $r$ is expressed as:
 \begin{equation*}
 	\bvec{r} = x_3\uvec{x} + y_3\uvec{y} + z_3\uvec{z}
@@ -80,18 +81,32 @@ Our acceleration vector is then expanded to:
 	\bvec{a} = x_3''\uvec{x} + 2x_3'\uvec{x}' + x_3\uvec{x}'' + y_3'\uvec{y} + 2y_3'\uvec{y}' + x_3\uvec{y}'' + z_3''\uvec{z} + 2z_3'\uvec{z}' + z_3\uvec{z}''
 \end{equation*}
 Substituting the derivatives of the basis vectors that we calculated earlier,
-\begin{gather*}
-	\bvec{a} = x_3''\uvec{x} + 2x_3'(\theta'\uvec{y}) + x_3(\theta''\uvec{y} - \theta'^2\uvec{x}) + y_3''\uvec{y} - 2y_3'(\theta'\uvec{x}) - x_3(\theta''\uvec{x} + \theta'\uvec{y}) + z_3''\uvec{z} \\
-	\bvec{a} = (x_3'' - \theta'^2x_3 - 2y_3'\theta' - y_3\theta'')\uvec{x} + (y_3'' + 2x_3'\theta' - \theta'^2y_3 + x_3\theta'')\uvec{y} + z_3''\uvec{z}
-\end{gather*}
+\begin{align}
+	\bvec{a} &= x_3''\uvec{x} + 2x_3'(\theta'\uvec{y}) + x_3(\theta''\uvec{y} - \theta'^2\uvec{x}) + y_3''\uvec{y} - 2y_3'(\theta'\uvec{x}) - x_3(\theta''\uvec{x} + \theta'\uvec{y}) + z_3''\uvec{z} \nonumber \\
+	\bvec{a} &= (x_3'' - \theta'^2x_3 - 2y_3'\theta')\uvec{x} + (y_3'' + 2x_3'\theta' - \theta'^2y_3)\uvec{y} + z_3''\uvec{z} \label{eqn:accel-rotate} \text{.}
+\end{align}
 This equation represents the general centripetal acceleration of an object in circular motion in three dimensions.
-To account for gravity, the force due to gravity is expressed as:
-\begin{gather*}
-	\bvec{F} = \frac{Gm_1m_3}{r_1}\bvec{r}_1 + \frac{Gm_2m_3}{r_2}\bvec{r}_2
-\end{gather*}
+To account for gravity, the acceleration due to gravity is expressed as:
+\begin{align*}
+	\bvec{F} = m_3\bvec{a} &= - \frac{Gm_1m_3}{r_1}\bvec{r}_1 - \frac{Gm_2m_3}{r_2}\bvec{r}_2 \\
+	\bvec{a} &= - \frac{Gm_1}{r_1}\bvec{r}_1 - \frac{Gm_2}{r_2}\bvec{r}_2
+\end{align*}
 Where $\bvec{r}_1$ and $\bvec{r}_2$ is the distance of our satellite from $m_1$ and $m_2$, respectively.
-Their scalars are calculated as:
-\begin{gather*}
-	r_1 = \sqrt{x_3^2 + y_3^2 + z_3^2} \\
-	r_2 = \sqrt{(x_3 - R)^2 + y_3^2 + z_3^2} 
-\end{gather*}
+$\bvec{r}_1$ and $\bvec{r}_2$ and their magnitudes are represented as:
+\begin{align*}
+	\bvec{r}_1 &= x_3\uvec{x} + y_3\uvec{y} + z_3\uvec{z} & r_1 &= \sqrt{x_3^2 + y_3^2 + z_3^2} \\
+	\bvec{r}_2 &= (x_3 - R)\uvec{x} + y_3\uvec{y} + z_3\uvec{z} & r_2 &= \sqrt{(x_3 - R)^2 + y_3^2 + z_3^2} 
+\end{align*}
+Under this definition, the acceleration vector can be expanded for each dimension:
+\begin{equation*}
+	\bvec{a} = \left(-\frac{Gm_1}{r_1}x - \frac{Gm_2}{r_2}(x - R)\right)\uvec{x} + \left(-\frac{Gm_1}{r_1}y - \frac{Gm_2}{r_2}y\right)\uvec{y} + \left(-\frac{Gm_1}{r_1}z - \frac{Gm_2}{r_2}z\right)\uvec{z}
+\end{equation*}
+Now that it is written in terms of its components, just like Equation \eqref{eqn:accel-rotate}, we can set the components of each vector equal to each other (note that $\theta' = \omega$, which is radial velocity).
+\begin{align*}
+	\uvec{x} : \qquad x_3'' &= + \omega^2x_3 + 2y_3'\omega -\frac{Gm_1}{r_1}x - \frac{Gm_2}{r_2}(x - R) \\
+	\uvec{y} : \qquad y_3'' &= + \omega^2y_3 - 2x_3'\omega -\frac{Gm_1}{r_1}y - \frac{Gm_2}{r_2}y \\
+	\uvec{z} : \qquad z_3'' &= -\frac{Gm_1}{r_1}z - \frac{Gm_2}{r_2}z
+\end{align*}
+These are our equations of motion that govern the movement of a satellite around a Lagrange point.
+Technically, we can use them to represent motion anywhere in our system, not just the Lagrange points.
+In physics, these equations are simplified versions of those found in the ``circular restricted three-body problem.'' 

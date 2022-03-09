@@ -1,4 +1,3 @@
-from tabnanny import check
 from scipy.optimize import root_scalar
 from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
@@ -53,7 +52,7 @@ def nonlinear_EOM(t, X):
     return Xdot
 
 
-def init_v(lpoint, position: tuple):
+def init_circular_v(lpoint, position: tuple):
     x= lpoint + position[0]
     y= position[1]
     R1 = r1(x, y, 0)
@@ -77,12 +76,12 @@ def main2():
 
 def main():
     distance = 1000
-    iydot, ixdot = list(map(lambda x : x*2, init_v(L2, (distance,0,0))))
+    iydot, ixdot = list(map(lambda x : x*2, init_circular_v(L2, (distance,0,0))))
     print(iydot, ixdot, sep='\n')
     ixdot = 0
     # precision in the initial conditions is crucial
     iydot = 0.0147763 #2*init_vy(L2, (distance,0,0)) # ms-1
-    print(init_v(L2, (distance,0,0)))
+    print(init_circular_v(L2, (distance,0,0)))
     CONDITION_0 = np.array([L2 - distance, 0, 0, ixdot, iydot, 0])
     EOMs = nonlinear_EOM
     traj = solve_ivp(EOMs, [0,36*24*3600], CONDITION_0, atol=1e-6, rtol=3e-14)
