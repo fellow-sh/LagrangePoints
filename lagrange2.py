@@ -58,9 +58,9 @@ def init_circular_v(lpoint, position: float):
     R2 = r2(x, 0, 0)
     xddot = x*radial_velocity**2 - G*m1*x/(R1**3) \
         - G*m2*(x-R)/(R2**3)
-    print('a_r:', xddot, sep=' ')
-    ydot = np.sqrt(xddot*position)
-    return ydot*2
+    print(f'a_r: {xddot}')
+    ydot = 2.2*np.sqrt(xddot*position)
+    return ydot
 
 
 def main2():
@@ -73,15 +73,18 @@ def main2():
 
 
 def main():
+    time_u = 24*3600
+    duration = 180
     distance = 1000
     iydot = init_circular_v(L2, distance)
-    print(iydot)
-    iydot = .0013055
+    print(f'ciydot: {iydot}')
+    iydot = .00130549
+    print(f'test_iydot: {iydot}', f'c / test: {iydot/init_circular_v(L2, distance)}')
     # precision in the initial conditions is crucial
     #iydot = 0.147763 # ms-1
     CONDITION_0 = np.array([L2 - distance, 0, 0, 0, iydot, 0])
     EOMs = nonlinear_EOM
-    traj = solve_ivp(EOMs, [0,200*24*3600], CONDITION_0, atol=1e-6, rtol=3e-14)
+    traj = solve_ivp(EOMs, [0,time_u*duration], CONDITION_0, atol=1e-6, rtol=3e-14)
 
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
@@ -90,12 +93,13 @@ def main():
     ax.plot(L2-distance, 0, 0, 'r+')
     ax.plot(L2, np.pi*distance, 0, 'm+')
 
-    bound = 5*distance
+    bound = 3.5*distance
     ax.axes.set_xlim3d(left=L2 - bound, right=L2 + bound)
     ax.axes.set_ylim3d(bottom=-bound, top=bound)
     ax.axes.set_zlim3d(bottom=-bound, top=bound)
 
     plt.show()
+
 
 if __name__ == '__main__':
     main()
