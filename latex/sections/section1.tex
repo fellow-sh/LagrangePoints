@@ -58,9 +58,9 @@ Solving for the centripetal acceleration, we get the formula:
 Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$, given that the net radial acceleration is 0.
 It is worth noting that, with respect to direction, $r^2$ and $(r-R)^2$ will only reflect acceleration due to gravity in the negative direction and will not be sufficient to tell us where L1 and L3 are.
 Knowing that, cautiously, $n^2 = n \times |n|$, the formula is rewritten as such to preserve the sign of $r$:
-\begin{equation*}
-	a = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r
-\end{equation*}
+\begin{equation}
+	a = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r \label{eqn:x-accel1}
+\end{equation}
 To save ourselves the agony of whether it is possible to isolate for $r$, we will use Python to plot the centripetal acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
 \begin{figure}[H]
 	\centering
@@ -83,7 +83,7 @@ To save ourselves the agony of whether it is possible to isolate for $r$, we wil
 \end{figure}
 Given that we are only concerned with L2, the distance of L2 from the Sun is computed as $1.511 \times 10^8 \si{\kilo\metre}$.
 
-Note how our equation for acceleration is dependent on the distance an object is from either body.
+Note how Equation \eqref{eqn:x-accel1} for acceleration is dependent on the distance an object is from either body.
 Should we try to predict the motion of an object, there would be no way to express distance as a function of time.
 This is a major hurdle that occurs in physics and, while there can be specific situations where this can be overcome, most of the time there is no solution.
 Instead, we would have to numerically integrate the distance travelled over time.

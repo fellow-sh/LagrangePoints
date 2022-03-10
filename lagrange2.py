@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 G = 6.67408e-11
-m1 = 5.972e24 # 1.9885e30 # kg
-m2 = 7.35e22 #5.972e24 # kg
-R = 3.844e8 #1.49598e11 # m
+m1 = 1.9885e30 # kg 5.972e24
+m2 = 5.972e24 # kg 7.35e22
+R = 1.49598e11 # m 3.844e8
 radial_velocity = np.sqrt(G*(m1+m2)/R**3)
 
 def LN(r):
@@ -16,8 +16,8 @@ def LN(r):
     return ang_v + f1 + f2
 
 
-#L2 = root_scalar(LN, bracket=[1.50e11, 1.52e11]).root
-L2 = root_scalar(LN, bracket=[0.448e9, 0.45e9]).root
+L2 = root_scalar(LN, bracket=[1.50e11, 1.52e11]).root
+#L2 = root_scalar(LN, bracket=[0.448e9, 0.45e9]).root
 
 def solve_lde(f, variable):
     ...
@@ -52,17 +52,15 @@ def nonlinear_EOM(t, X):
     return Xdot
 
 
-def init_circular_v(lpoint, position: tuple):
-    x= lpoint + position[0]
-    y= position[1]
-    R1 = r1(x, y, 0)
-    R2 = r2(x, y, 0)
-    ax = x*G*(m1+m2)/(R**3) - x*G*m1/(R1**3) - G*m2*(R-x)/(R2**3)
-    ay = y*G*(m1+m2)/(R**3) - y*G*m1/(R1**3) - y*G*m2/(R2**3)
-    print(ax)
-    vx = np.sqrt(ax*position[0])
-    vy = np.sqrt(ay*position[1])
-    return (vx,vy)
+def init_circular_v(lpoint, position: float):
+    x= lpoint + position
+    R1 = r1(x, 0, 0)
+    R2 = r2(x, 0, 0)
+    xddot = x*radial_velocity**2 - G*m1*x/(R1**3) \
+        - G*m2*(x-R)/(R2**3)
+    print('a_r:', xddot, sep=' ')
+    ydot = np.sqrt(xddot*position)
+    return ydot*2
 
 
 def main2():
@@ -76,21 +74,21 @@ def main2():
 
 def main():
     distance = 1000
-    iydot, ixdot = list(map(lambda x : x*2, init_circular_v(L2, (distance,0,0))))
-    print(iydot, ixdot, sep='\n')
-    ixdot = 0
+    iydot = init_circular_v(L2, distance)
+    print(iydot)
+    iydot = .0013055
     # precision in the initial conditions is crucial
-    iydot = 0.0147763 #2*init_vy(L2, (distance,0,0)) # ms-1
-    print(init_circular_v(L2, (distance,0,0)))
-    CONDITION_0 = np.array([L2 - distance, 0, 0, ixdot, iydot, 0])
+    #iydot = 0.147763 # ms-1
+    CONDITION_0 = np.array([L2 - distance, 0, 0, 0, iydot, 0])
     EOMs = nonlinear_EOM
-    traj = solve_ivp(EOMs, [0,36*24*3600], CONDITION_0, atol=1e-6, rtol=3e-14)
+    traj = solve_ivp(EOMs, [0,200*24*3600], CONDITION_0, atol=1e-6, rtol=3e-14)
 
     fig = plt.figure()
     ax = fig.add_subplot(projection='3d')
     ax.plot(traj.y[0,:], traj.y[1,:], traj.y[2,:], 'b')
     ax.plot(L2, 0, 0, 'k+')
     ax.plot(L2-distance, 0, 0, 'r+')
+    ax.plot(L2, np.pi*distance, 0, 'm+')
 
     bound = 5*distance
     ax.axes.set_xlim3d(left=L2 - bound, right=L2 + bound)
