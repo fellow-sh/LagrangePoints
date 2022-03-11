@@ -31,11 +31,8 @@ def r2(x,y,z):
 def nonlinear_EOM(t, X):
     Xdot = np.zeros(len(X))
     Xdot[:3] = X[3:6]
-    x = X[0]
-    y = X[1]
-    z = X[2]
-    xdot = X[3]
-    ydot = X[4]
+    x, y, z = X[:3]
+    xdot, ydot = X[3:5]
     R1 = r1(x,y,z)
     R2 = r2(x,y,z)
     xddot = x*radial_velocity**2 + 2*radial_velocity*ydot - G*m1*x/(R1**3) \
@@ -78,7 +75,13 @@ def main():
         duration = 50 # days
         YDOT_0 = 0 # ms-1
         CONDITION_0 = np.array([L2 - distance, 0, 0, 0, YDOT_0, 0])
-        traj = solve_ivp(nonlinear_EOM, [0,time_u*duration], CONDITION_0, atol=1e-6, rtol=3e-14)
+        traj = solve_ivp(
+            nonlinear_EOM,
+            [0,time_u*duration],
+            CONDITION_0,
+            atol=1e-6,
+            rtol=3e-14
+        )
 
         fig = plt.figure()
         ax = fig.add_subplot(projection='3d')
@@ -101,19 +104,75 @@ def main():
 
 
     def plot2() -> None:
-        ...
+        duration = 300 # days
+        YDOT_0 = init_circular_v(L2, distance) # ms-1
+        print(YDOT_0)
+        CONDITION_0 = np.array([L2 - distance, 0, 0, 0, YDOT_0, 0])
+        traj = solve_ivp(
+            nonlinear_EOM,
+            [0,time_u*duration],
+            CONDITION_0,
+            atol=1e-6,
+            rtol=3e-14
+        )
+
+        fig = plt.figure()
+        ax = fig.add_subplot(projection='3d')
+        ax.plot(traj.y[0,:], traj.y[1,:], traj.y[2,:])
+        ax.plot(L2, 0, 0, 'k+')
+        ax.plot(L2-distance, 0, 0, 'r+')
+        ax.text(L2-distance, 0, 0, 'P₀')
+
+        #ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_zlabel('z')
+
+        bound = 3.5*distance
+        ax.axes.set_xlim3d(left=L2 - bound, right=L2 + bound)
+        ax.axes.set_ylim3d(bottom=-bound, top=bound)
+        ax.axes.set_zlim3d(bottom=-bound, top=bound)
+        ax.view_init(20, -140)
+
+        plt.show()
 
 
-    plot1()
+    def plot3() -> None:
+        distance = 250000000
+        duration = 400 # days
+        YDOT_0 = init_circular_v(L2, np.sqrt(distance**2 + (-distance/2)**2)) # ms-1
+        print(YDOT_0)
+        CONDITION_0 = np.array([L2 - distance, 0, -distance/2, 0, YDOT_0, 0])
+        traj = solve_ivp(
+            nonlinear_EOM,
+            [0,time_u*duration],
+            CONDITION_0,
+            atol=1e-6,
+            rtol=3e-14
+        )
 
-    iydot = init_circular_v(L2, distance)
+        fig = plt.figure()
+        ax = fig.add_subplot(projection='3d')
+        ax.plot(traj.y[0,:], traj.y[1,:], traj.y[2,:])
+        ax.plot(L2, 0, 0, 'k+')
+        ax.plot(L2-distance, 0, -distance/2, 'r+')
+        ax.text(L2-distance, 0, -distance/2, 'P₀')
+
+        #ax.set_xlabel('x')
+        ax.set_ylabel('y')
+        ax.set_zlabel('z')
+
+        bound = 3.5*distance
+        ax.axes.set_xlim3d(left=L2 - bound, right=L2 + bound)
+        ax.axes.set_ylim3d(bottom=-bound, top=bound)
+        ax.axes.set_zlim3d(bottom=-bound, top=bound)
+        ax.view_init(20, -140)
+
+        plt.show()
+
+
+    plot3()
     #iydot = .00000130549*distance
-    iydot = 0
-    #print(f'test_iydot: {iydot}', f'c / test: {iydot/init_circular_v(L2, distance)}')
-    # precision in the initial conditions is crucial
     #iydot = 0.147763 # ms-1
-
-    plt.show()
 
 
 if __name__ == '__main__':
