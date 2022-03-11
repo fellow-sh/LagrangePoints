@@ -1,4 +1,4 @@
-From a basic understanding of classical mechanics, we can determine the location of Lagrange points. Before we do any math on Lagrange points, its important to know what they are exactly. According to NASA, Lagrange points are special solutions in what is know as the ``three-body problem.'' At these points in space, the gravitational and rotational forces of the other two bodies effectively cancel each other out, allowing small objects to seemingly stay in place\autocite{JWSTOrbit}.
+From a basic understanding of classical mechanics, we can determine the location of Lagrange points. But before we do any math on Lagrange points, its important to know what they are exactly. According to NASA, Lagrange points are special solutions in what is known as the ``three-body problem.'' At these points in space, the gravitational and rotational forces of the other two bodies effectively cancel each other out, allowing small objects to seemingly stay in place\autocite{JWSTOrbit}.
 
 With this in mind, lets consider a simple system of two static masses, $m_1$ and $m_2$, where $m_1 > m_2$.
 
@@ -45,13 +45,13 @@ where $T$ expresses the orbital period of $m_3$. Given that, from Kepler's Third
 \end{equation*}
 centripetal force can be rewritten as:
 \begin{equation*}
-	F = \frac{G(m_1+m_2)}{R^3}rm_3
+	F = \frac{G(m_1+m_2)}{R^3}m_3r
 \end{equation*}
-Therefore, the net force between $m_1$ and $m_2$ is written as:
+Considering how the sign of each term of force indicates direction, the net force between $m_1$ and $m_2$ is written as:
 \begin{equation*}
-	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}rm_3
+	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}m_3r
 \end{equation*}
-Solving for the centripetal acceleration, we get the formula:
+By cancelling off $m_3$ to find centripetal acceleration, we get the equation:
 \begin{equation*}
 	a = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r
 \end{equation*}
@@ -61,7 +61,7 @@ Knowing that, cautiously, $n^2 = n \times |n|$, the formula is rewritten as such
 \begin{equation}
 	a = -\frac{Gm_1}{r|r|} - \frac{Gm_2}{(r - R)|r - R|} + \frac{G(m_1+m_2)}{R^3}r \label{eqn:x-accel1}
 \end{equation}
-To save ourselves the agony of whether it is possible to isolate for $r$, we will use Python to plot the centripetal acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
+To save ourselves the agony of whether it is possible to algebraically solve for $r$, we will use Python to plot the centripetal acceleration with respect to distance. The Lagrange points are located where the acceleration is 0.
 \begin{figure}[H]
 	\centering
 	\captionsetup[subfigure]{justification=centering}
@@ -84,13 +84,11 @@ To save ourselves the agony of whether it is possible to isolate for $r$, we wil
 Given that we are only concerned with L2, the distance of L2 from the Sun is computed as $1.511 \times 10^8 \si{\kilo\metre}$.
 
 Note how Equation \eqref{eqn:x-accel1} for acceleration is dependent on the distance an object is from either body.
-Should we try to predict the motion of an object, there would be no way to express distance as a function of time.
+Should we try to predict the motion of an object, there would be no way to express distance as a function of time as it is dependant on acceleration.
 This is a major hurdle that occurs in physics and, while there can be specific situations where this can be overcome, most of the time there is no solution.
-Instead, we would have to numerically integrate the distance travelled over time.
-Not to be confused with integration, this means that we would need to calculate the acceleration at a certain distance, let our object travel for an interval of time at said acceleration, than recalculate acceleration for our new distance.
-This is tedious work that, for the sake of both my sanity and time, we will delegate to computers.
 We should not let this caveat daunt us, however, as there is still a lot to learn about how we describe the motion of objects in such a relation.
 
+\newpage
 %\begin{figure}[!h]
 %	\centering
 %	\begin{tikzpicture}
