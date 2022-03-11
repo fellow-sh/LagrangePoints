@@ -25,6 +25,7 @@ meaning the unknown values to the equations of motion are $x, y, z, x', y'$, and
 By setting our initial $x$ coordinate $(1.511\times10^{11} - 10^3)\si{\metre}$, $1000\si{\metre}$ away from of L2, and the remaining conditions $y, z, x', y', z' = 0$, we can compute our first trajectory for our satellite, $m_3$.
 As seen in Figure \ref{fig:3dplot1}, the satellite unremarkably falls back towards the Earth.
 This makes sense since there is no initial velocity and the initial position places it in the influence of Earth's gravity.
+With these initial values, we can input them into our equations of motion and than numerically approximate the trajectories of our satellite using Python.
 \newpage
 \begin{samepage}
 \begin{figure}[ht!]
@@ -33,7 +34,7 @@ This makes sense since there is no initial velocity and the initial position pla
 	\caption{Trajectory plot of an object near L2 fo the Sun-Earth system, x-coordinate is $(1.511\times10^{11} - 10^3)\si{\metre}$, all other conditions are 0.
 		The red point, $P_0$, indicates the starting position of the object.
 		The black point indicates the Lagrange point.
-		Generated through the matplotlib Python library.
+		Generated through the matplotlib and scipy Python libraries.
 	}
 	\label{fig:3dplot1}
 \end{figure}
@@ -65,7 +66,7 @@ Given that telemetry of the JWST is readily available through JPL Horizons Syste
 		\caption{Modelled trajectory plot of the JWST $2.5\times10^8\si{\metre}$ L2. Not modelled with station-keeping.}
 		\label{fig:3dplot3}
 	\end{subfigure}
-	\quad
+	\qquad
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[scale=0.2]{xyjwstplot.png}
@@ -74,7 +75,7 @@ Given that telemetry of the JWST is readily available through JPL Horizons Syste
 		\label{fig:3dplot4}
 		\vspace*{1em}
 	\end{subfigure}
-	\caption{Trajectories of the JWST. Figure (a) has $P_0$ positioned at $(L_2 - 2.5\times10^8, 0, - 1.2\times10^8)$. Figure (b) generated through SageMath and produced by PM 2Ring on Stack Exchange.}
+	\caption{Trajectories of the JWST. Figure (a) has $P_0$ positioned at $(L_2 - 2.5\times10^8, 0, - 1.2\times10^8)$. Figure (b) is generated through SageMath and produced by PM 2Ring on Stack Exchange.}
 \end{figure}
 Figure \ref{fig:3dplot3} is the trajectory of the JWST given the expected orbital characteristics prior to launch\autocite{JWSTHaloOrbit}.
 Figure \ref{fig:3dplot4} is the trajectory of the JWST according to the JPL Horizons database from December 26th, 2021 to January 22, 2024\autocite{SEHaloOrbit}.
