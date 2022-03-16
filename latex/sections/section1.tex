@@ -45,17 +45,17 @@ where $T$ expresses the orbital period of $m_2$. Given that, from Kepler's Third
 \end{equation*}
 centripetal force can be rewritten as:
 \begin{equation*}
-	F = \frac{G(m_1+m_2)}{R^3}m_3r
+	F = \frac{G(m_1+m_2)}{R^3}m_3r \text{.}
 \end{equation*}
 Considering how the sign of each term of force indicates direction, the net force between $m_1$ and $m_2$ is written as:
 \begin{equation*}
-	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}m_3r
+	F = m_3a = -\frac{Gm_1m_3}{r^2} - \frac{Gm_2m_3}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}m_3r \text{.}
 \end{equation*}
 By cancelling off $m_3$ to find centripetal acceleration, we get the equation:
 \begin{equation*}
-	a = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r
+	a = -\frac{Gm_1}{r^2} - \frac{Gm_2}{(r - R)^2} + \frac{G(m_1+m_2)}{R^3}r \text{.}
 \end{equation*}
-Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$, given that the net radial acceleration is 0.
+Most of the variables are known constants, with \textit{r} being the only unknown value which represents the distance of the Lagrange point from $m_1$, given that the net radial acceleration at the point is 0.
 It is worth noting that, with respect to direction, $r^2$ and $(r-R)^2$ will only reflect acceleration due to gravity in the negative direction and will not be sufficient to tell us where L1 and L3 are.
 Knowing that, cautiously, $n^2 = n \times |n|$, the formula is rewritten as such to preserve the sign of $r$:
 \begin{equation}
@@ -67,19 +67,19 @@ To save ourselves the agony of whether it is possible to algebraically solve for
 	\captionsetup[subfigure]{justification=centering}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[scale=0.6]{r-accel-figure-1.png}
+		\includegraphics[scale=0.6]{figures/xyplot1.png}
 		\caption{\footnotesize Radial acceleration between the Sun and Earth.}
 		\label{fig:radial-accel-system}
 	\end{subfigure}
 	\hspace*{1cm}
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
-		\includegraphics[scale=0.6]{r-accel-figure-2.png}
+		\includegraphics[scale=0.6]{figures/xyplot2.png}
 		\caption{\footnotesize Radial acceleration around the Earth.\vspace*{1.16em}}
 		\label{fig:radial-accel-earth}
 	\end{subfigure}
 	\label{fig:radial-accel}
-	\caption{Net radial acceleration vs distance of the Sun-Earth system. Graphs are created using the matplotlib and scipy Python libraries.}
+	\caption{Net radial acceleration vs distance of the Sun-Earth system. Graphs are created using the Matplotlib Python library.}
 \end{figure}
 Given that we are only concerned with L2, the distance of L2 from the Sun is computed as $1.511 \times 10^8 \si{\kilo\metre}$.
 
@@ -89,16 +89,3 @@ This is a major hurdle that occurs in physics and, while there can be specific s
 We should not let this caveat daunt us, however, as there is still a lot to learn about how we describe the motion of objects in such a relation.
 
 \newpage
-%\begin{figure}[!h]
-%	\centering
-%	\begin{tikzpicture}
-%		\draw[grey,thick] (0,0) circle (2);
-%		\filldraw (0,0) circle (3pt) node[anchor=north east]{$m_1$};
-%		\filldraw (1.41, 1.41) circle (2pt) node[anchor=south west]{$m_2$};
-%		\draw[thick,<-] (0.71,0.71) -- (1.41,1.41);
-%		\node at (0.71, 0.71) [below,align=right]{$a$};
-%	\end{tikzpicture}
-%\vspace*{0.25cm}
-%\caption{Orbit of }
-%\label{fig:orbit}
-%\end{figure}

@@ -10,8 +10,8 @@ It is important, however, that we first establish the system that we will be wor
 		\draw[thin,gray,->] (0,0,0) -- (2,0,0) node[right] {$\uvec{y}_0$};
 		
 		\draw[thick,blue] (o) -- (m2) node[midway,yshift=-8pt]{$R$};
-		\draw[thick,red] (o) -- (m3) node[midway,anchor=south east]{$\bvec{r_1}$};
-		\draw[thick,red] (m2) -- (m3) node[midway,anchor=south west]{$\bvec{r_2}$};
+		\draw[thick,red] (o) -- (m3) node[midway,anchor=south east]{$\bvec{\bvec{r}_1}$};
+		\draw[thick,red] (m2) -- (m3) node[midway,anchor=south west]{$\bvec{\bvec{r}_2}$};
 		
 		\draw[very thick,->] (0,0,0) -- (0,2,0) node[above] {$\uvec{z}$};
 		\draw[very thick,->] (0,0,0) -- (1.73,0,0.99) node[below left] {$\uvec{x}$};
@@ -42,14 +42,14 @@ It is also important to acknowledge that we will need to take the derivative of 
 	\frac{d}{dt}\bvec{v} = \frac{da}{dt}\uvec{i} + \frac{db}{dt}\uvec{j} \text{.}
 \end{equation*}
 In other words, the derivative of a vector is equivalent to the derivative of its components.
-This will allow us to analyze the movement of an object through kinematics in all three dimensions $x$, $y$, and $z$. Keep in mind that $\bvec{r}$---hence $x$, $y$, $z$, and $\theta$---are functions of time $t$.
+This will allow us to analyze the movement of an object through kinematics in all three dimensions $x$, $y$, and $z$. Keep in mind that $\bvec{r}$---hence $x$, $y$, $z$, and $\theta$---are functions of time $t$ and we do not know how they are defined at this moment.
 
 \newpage
 
 One last thing: because we are dealing with vectors, Newton's law of gravitation can be rewritten in vector form:
 
 \begin{equation*}
-	\bvec{F} = m\bvec{a} = \frac{Gm_1m_2}{\|r\|^3}\bvec{r} \text{,}
+	\bvec{F} = m\bvec{a} = \frac{Gm_1m_2}{\|\bvec{r}\|^3}\bvec{r} \text{,}
 \end{equation*}
 where $r$ is the magnitude of $\bvec{r}$.
 
@@ -60,7 +60,7 @@ Because they are not actually static in the system ($\uvec{x}$ and $\uvec{y}$ ro
 	\uvec{x} = (\cos\theta)\uvec{x}_0 + (\sin\theta)\uvec{y}_0 \\
 	\uvec{y} = (-\sin\theta)\uvec{x}_0 + (\cos\theta)\uvec{y}_0 \\
 	\uvec{z} = \uvec{z}_0 \text{.}
-\end{gather*}near
+\end{gather*}
 Taking their first derivatives, we get:
 \begin{gather*}
 	\uvec{x}' = (-\sin\theta)\theta'\uvec{x}_0 + (\cos\theta)\theta'\uvec{y}_0 = \theta'\uvec{y} \\
@@ -95,29 +95,29 @@ Substituting the derivatives of the basis vectors that we calculated earlier,
 This equation represents the general centripetal acceleration of an object in circular motion in three dimensions.
 To account for gravity, the acceleration due to gravity is expressed as:
 \begin{align*}
-	\bvec{F} = m_3\bvec{a} &= - \frac{Gm_1m_3}{\|r_1\|^3}\bvec{r}_1 - \frac{Gm_2m_3}{\|r_2\|^3}\bvec{r}_2 \\
-	\bvec{a} &= - \frac{Gm_1}{\|r_1\|^3}\bvec{r}_1 - \frac{Gm_2}{\|r_2\|^3}\bvec{r}_2 \text{.}
+	\bvec{F} = m_3\bvec{a} &= - \frac{Gm_1m_3}{\|\bvec{r}_1\|^3}\bvec{r}_1 - \frac{Gm_2m_3}{\|\bvec{r}_2\|^3}\bvec{r}_2 \\
+	\bvec{a} &= - \frac{Gm_1}{\|\bvec{r}_1\|^3}\bvec{r}_1 - \frac{Gm_2}{\|\bvec{r}_2\|^3}\bvec{r}_2 \text{.}
 \end{align*}
 Where $\bvec{r}_1$ and $\bvec{r}_2$ is the distance of our satellite from $m_1$ and $m_2$, respectively.
-$\bvec{r}_1$ and $\bvec{r}_2$ and their magnitudes, $\|r_1\|$ and $\|r_2\|$, are represented as:
+$\bvec{r}_1$ and $\bvec{r}_2$ and their magnitudes, $\|\bvec{r}_1\|$ and $\|\bvec{r}_2\|$, are represented as:
 \begin{align*}
-	\bvec{r}_1 &= x\uvec{x} + y\uvec{y} + z\uvec{z} & \|r_1\| &= \sqrt{x^2 + y^2 + z^2} \\
-	\bvec{r}_2 &= (x - R)\uvec{x} + y\uvec{y} + z\uvec{z} & \|r_2\| &= \sqrt{(x - R)^2 + y^2 + z^2} \text{.}
+	\bvec{r}_1 &= x\uvec{x} + y\uvec{y} + z\uvec{z} & \|\bvec{r}_1\| &= \sqrt{x^2 + y^2 + z^2} \\
+	\bvec{r}_2 &= (x - R)\uvec{x} + y\uvec{y} + z\uvec{z} & \|\bvec{r}_2\| &= \sqrt{(x - R)^2 + y^2 + z^2} \text{.}
 \end{align*}
 Written in unit vector form, the acceleration vector can be expanded for each dimension:
 \begin{equation*}
-	\bvec{a} = \left(-\frac{Gm_1}{\|r_1\|^3}x - \frac{Gm_2}{\|r_2\|^3}(x - R)\right)\uvec{x} + \left(-\frac{Gm_1}{\|r_1\|^3}y - \frac{Gm_2}{\|r_2\|^3}y\right)\uvec{y} + \left(-\frac{Gm_1}{\|r_1\|^3}z - \frac{Gm_2}{\|r_2\|^3}z\right)\uvec{z} \text{.}
+	\bvec{a} = \left(-\frac{Gm_1}{\|\bvec{r}_1\|^3}x - \frac{Gm_2}{\|\bvec{r}_2\|^3}(x - R)\right)\uvec{x} + \left(-\frac{Gm_1}{\|\bvec{r}_1\|^3}y - \frac{Gm_2}{\|\bvec{r}_2\|^3}y\right)\uvec{y} + \left(-\frac{Gm_1}{\|\bvec{r}_1\|^3}z - \frac{Gm_2}{\|\bvec{r}_2\|^3}z\right)\uvec{z} \text{.}
 \end{equation*}
 Now that it is written in terms of its components, just like Equation \eqref{eqn:accel-rotate}, we can set the components of each vector equal to each other.
 \begin{align*}
-	\uvec{x} : \qquad &x'' - \theta'^2x - 2y'\theta' = -\frac{Gm_1}{\|r_1\|^3}x - \frac{Gm_2}{\|r_2\|^3}(x - R) \\
-	\uvec{y} : \qquad &y'' - \theta'^2y + 2x'\theta' = -\frac{Gm_1}{\|r_1\|^3}y - \frac{Gm_2}{\|r_2\|^3}y \\
-	\uvec{z} : \qquad &z'' = -\frac{Gm_1}{\|r_1\|^3}z - \frac{Gm_2}{\|r_2\|^3}z
+	\uvec{x} : \qquad &x'' - \theta'^2x - 2y'\theta' = -\frac{Gm_1}{\|\bvec{r}_1\|^3}x - \frac{Gm_2}{\|\bvec{r}_2\|^3}(x - R) \\
+	\uvec{y} : \qquad &y'' - \theta'^2y + 2x'\theta' = -\frac{Gm_1}{\|\bvec{r}_1\|^3}y - \frac{Gm_2}{\|\bvec{r}_2\|^3}y \\
+	\uvec{z} : \qquad &z'' = -\frac{Gm_1}{\|\bvec{r}_1\|^3}z - \frac{Gm_2}{\|\bvec{r}_2\|^3}z
 \end{align*}
 The variables can then be rearranged to give us our equations of motion:
 \begin{align}
-	x'' &= \theta'^2x + 2y'\theta' -\frac{Gm_1}{\|r_1\|^3}x - \frac{Gm_2}{\|r_2\|^3}(x - R) \label{eqn:eomx}\\
-	y'' &= \theta'^2y - 2x'\theta' -\frac{Gm_1}{\|r_1\|^3}y - \frac{Gm_2}{\|r_2\|^3}y \label{eqn:eomy}\\
-	z'' &= -\frac{Gm_1}{\|r_1\|^3}z - \frac{Gm_2}{\|r_2\|^3}z \label{eqn:eomz}\text{.}
+	x'' &= \theta'^2x + 2y'\theta' -\frac{Gm_1}{\|\bvec{r}_1\|^3}x - \frac{Gm_2}{\|\bvec{r}_2\|^3}(x - R) \label{eqn:eomx}\\
+	y'' &= \theta'^2y - 2x'\theta' -\frac{Gm_1}{\|\bvec{r}_1\|^3}y - \frac{Gm_2}{\|\bvec{r}_2\|^3}y \label{eqn:eomy}\\
+	z'' &= -\frac{Gm_1}{\|\bvec{r}_1\|^3}z - \frac{Gm_2}{\|\bvec{r}_2\|^3}z \label{eqn:eomz}\text{.}
 \end{align}
 \end{samepage}
