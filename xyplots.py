@@ -1,4 +1,4 @@
-from scipy.optimize import root_scalar
+from scipy.optimize import fsolve
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -16,12 +16,11 @@ def LN(r):
     f1 = -G*m1/((r)*abs(r))
     f2 = -G*m2/((r-R)*abs(r-R))
     ang_v = G*r*(m1+m2)/(R**3)
-    #ang_v = G*((m1+m2)*(x3+x1)-(m2*l))/(l**3)
     return ang_v + f1 + f2
 
-l1 = root_scalar(LN, bracket=[1.48e8, 1.49e8]).root
-l2 = root_scalar(LN, bracket=[1.50e8, 1.52e8]).root
-l3 = root_scalar(LN, bracket=[-1.52e8, -1.49e8]).root
+l1 = fsolve(LN, 1.48e8)
+l2 = fsolve(LN, 1.50e8)
+l3 = fsolve(LN, -1.5e8)
 
 print('L1:', l1)
 print('L2:', l2)
